@@ -1,4 +1,4 @@
-package com.twitter;
+package br.com.willperes.twitter;
 
 import android.app.Application;
 import com.facebook.react.PackageList;

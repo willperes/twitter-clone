@@ -1,4 +1,4 @@
-package com.twitter;
+package br.com.willperes.twitter;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

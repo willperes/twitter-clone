@@ -73,9 +73,9 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.twitter"
+    namespace "br.com.willperes.twitter"
     defaultConfig {
-        applicationId "com.twitter"
+        applicationId "br.com.willperes.twitter"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
