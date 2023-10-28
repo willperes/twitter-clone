@@ -1,7 +1,7 @@
 import { useLayout } from '../../src/hooks/useLayout';
 import { renderHook } from '@testing-library/react-hooks';
 import { type DefaultTheme } from 'styled-components/native';
-import { themeProviderWrapper } from '../../__utils__/themeProviderWrapper';
+import { themeProviderWrapper } from '../../__utils__/wrappers/themeProviderWrapper';
 
 const mockTheme = {
   colors: {
