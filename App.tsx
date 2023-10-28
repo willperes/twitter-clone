@@ -1,15 +1,14 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
 import { Routes } from './src/routes';
+import { ThemeProvider } from 'styled-components/native';
+import { lightTheme } from './src/theme';
 
 function App(): JSX.Element {
-  return <Routes />;
+  return (
+    <ThemeProvider theme={lightTheme}>
+      <Routes />
+    </ThemeProvider>
+  );
 }
 
 export default App;
