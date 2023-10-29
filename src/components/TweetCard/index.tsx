@@ -6,6 +6,7 @@ import { Text } from '../Layout';
 import { UserNickname } from '../UserNickname';
 import { UserPhoto } from '../UserPhoto';
 import { moderateScale } from '../../utils/layout';
+import { TweetActions } from '../TweetActions';
 
 interface Props {
   data: TweetSummary;
@@ -44,6 +45,12 @@ export const TweetCard: React.FC<Props> = ({ data }) => {
             </Text>
           </View>
           <Text size={16}>{data.content}</Text>
+          <View style={{ marginTop: moderateScale(10) }}>
+            <TweetActions
+              iconSize={20}
+              countData={{ comments: data.comments, retweets: data.retweets, likes: data.likes }}
+            />
+          </View>
         </View>
       </View>
     </TouchableOpacity>

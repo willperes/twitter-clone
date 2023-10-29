@@ -15,7 +15,7 @@ const mockTweetSummary: TweetSummary = {
   content:
     "Somebody once told me the world is gonna roll me\n\nI ain't the sharpest tool in the shed",
   createdAt: new Date('2023-10-28T20:00:00.968Z'),
-  comments: 0,
+  comments: 2,
   retweets: 5,
   likes: 20,
 };

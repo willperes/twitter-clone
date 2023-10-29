@@ -2,7 +2,7 @@ import { TouchableOpacity, View } from 'react-native';
 import { useLayout } from '../../../hooks/useLayout';
 import React from 'react';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { moderateScale, verticalScale } from '../../../utils/layout';
+import { moderateScale } from '../../../utils/layout';
 
 interface Props {
   leadingComponent: React.ReactNode;
@@ -28,7 +28,7 @@ export const BaseHeader: React.FC<Props> = ({
         style={{
           flexDirection: 'row',
           alignItems: 'center',
-          height: verticalScale(42),
+          height: moderateScale(42),
           paddingHorizontal: moderateScale(20),
         }}
       >
