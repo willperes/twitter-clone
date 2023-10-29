@@ -1,5 +1,5 @@
 interface BaseTweet {
-  publishedBy: TweetUser;
+  publishedBy: TweetUserInformation;
   createdAt: Date;
   content: string;
 }
@@ -10,8 +10,9 @@ export interface TweetSummary extends BaseTweet {
   likes: number;
 }
 
-export interface TweetUser {
+export interface TweetUserInformation {
   username: string;
   nickname: string;
   photoURL: string;
+  verified: boolean;
 }

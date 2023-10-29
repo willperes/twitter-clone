@@ -65,6 +65,7 @@ function FeedScreen(): React.ReactNode {
       username: 'willperes',
       nickname: 'Will',
       photoURL: 'https://github.com/willperes.png',
+      verified: true,
     },
     content:
       "Somebody once told me the world is gonna roll me\n\nI ain't the sharpest tool in the shed",

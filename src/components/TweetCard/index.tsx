@@ -3,6 +3,7 @@ import { type TweetSummary } from '../../types/data/Tweet';
 import { Image, TouchableOpacity, View } from 'react-native';
 import { useLayout } from '../../hooks/useLayout';
 import { Text } from '../Layout';
+import { UserNickname } from '../UserNickname';
 
 interface Props {
   data: TweetSummary;
@@ -35,18 +36,10 @@ export const TweetCard: React.FC<Props> = ({ data }) => {
           borderRadius={100}
         />
         <View style={{ flexShrink: 1, marginLeft: moderateScale(8) }}>
-          <View style={{ flexDirection: 'row' }}>
-            <View style={{ flexShrink: 1 }}>
-              <Text
-                size={16}
-                fontFamily={theme.fonts.inter.semiBold}
-                ellipsizeMode={'tail'}
-                numberOfLines={1}
-              >
-                {data.publishedBy.nickname}{' '}
-              </Text>
-            </View>
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <UserNickname userInformation={data.publishedBy} />
             <Text size={16} color={theme.colors.darkenText}>
+              {' '}
               @
             </Text>
             <Text size={16} color={theme.colors.darkenText}>
