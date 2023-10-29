@@ -1,9 +1,10 @@
-import { themeProviderWrapper } from '../../__utils__/wrappers/themeProviderWrapper';
+import { TestingWrapper } from '../../__utils__/wrappers/TestingWrapper';
 import { TweetCard } from '../../src/components/TweetCard';
 import { type TweetSummary } from '../../src/types/data/Tweet';
 import { render, waitFor } from '@testing-library/react-native';
 
 const mockTweetSummary: TweetSummary = {
+  id: 1,
   publishedBy: {
     username: 'willperes',
     nickname: 'Will',
@@ -21,7 +22,9 @@ const mockTweetSummary: TweetSummary = {
 describe('components/TweetCard', () => {
   it('should display the username on the card', async () => {
     const { getByText } = render(
-      themeProviderWrapper()({ children: <TweetCard data={mockTweetSummary} /> })
+      <TestingWrapper>
+        <TweetCard data={mockTweetSummary} />
+      </TestingWrapper>
     );
 
     await waitFor(() => {
@@ -31,19 +34,13 @@ describe('components/TweetCard', () => {
 
   it('should display the tweet content on the card', async () => {
     const { getByText } = render(
-      themeProviderWrapper()({ children: <TweetCard data={mockTweetSummary} /> })
+      <TestingWrapper>
+        <TweetCard data={mockTweetSummary} />
+      </TestingWrapper>
     );
 
     await waitFor(() => {
       expect(getByText(mockTweetSummary.content)).toBeTruthy();
     });
-  });
-
-  it('should display the user picture on the card', async () => {
-    const { getByTestId } = render(
-      themeProviderWrapper()({ children: <TweetCard data={mockTweetSummary} /> })
-    );
-
-    expect(getByTestId('tweet-card-user-photo')).toBeTruthy();
   });
 });

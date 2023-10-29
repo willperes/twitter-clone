@@ -32,6 +32,8 @@ const colors = {
     primary: '#4C9EEB',
     backgroundColor: '#FFFFFF',
 
+    secondarySeparator: '#CED5DC',
+
     text: '#141619',
     darkenText: '#687684',
   },

@@ -1,7 +1,7 @@
 import { useLayout } from '../../src/hooks/useLayout';
 import { renderHook } from '@testing-library/react-hooks';
+import { TestingWrapper } from '../../__utils__/wrappers/TestingWrapper';
 import { type DefaultTheme } from 'styled-components/native';
-import { themeProviderWrapper } from '../../__utils__/wrappers/themeProviderWrapper';
 
 const mockTheme = {
   colors: {
@@ -14,7 +14,8 @@ describe('hooks/useLayout', () => {
   describe('theme', () => {
     it('should return the app theme', () => {
       const { result } = renderHook(() => useLayout(), {
-        wrapper: themeProviderWrapper(mockTheme as DefaultTheme),
+        wrapper: ({ children }: { children: React.ReactNode }) =>
+          TestingWrapper({ mockTheme: mockTheme as DefaultTheme, children }),
       });
       expect(result.current.theme).toEqual(mockTheme);
     });
@@ -23,7 +24,7 @@ describe('hooks/useLayout', () => {
   describe('moderateScale', () => {
     it('should return a valid number', () => {
       const { result } = renderHook(() => useLayout(), {
-        wrapper: themeProviderWrapper(mockTheme as DefaultTheme),
+        wrapper: TestingWrapper,
       });
       expect(typeof result.current.moderateScale(100)).toBe('number');
     });
@@ -32,7 +33,7 @@ describe('hooks/useLayout', () => {
   describe('horizontalScale', () => {
     it('should return a valid number', () => {
       const { result } = renderHook(() => useLayout(), {
-        wrapper: themeProviderWrapper(mockTheme as DefaultTheme),
+        wrapper: TestingWrapper,
       });
       expect(typeof result.current.moderateScale(100)).toBe('number');
     });
@@ -41,7 +42,7 @@ describe('hooks/useLayout', () => {
   describe('verticalScale', () => {
     it('should return a valid number', () => {
       const { result } = renderHook(() => useLayout(), {
-        wrapper: themeProviderWrapper(mockTheme as DefaultTheme),
+        wrapper: TestingWrapper,
       });
       expect(typeof result.current.moderateScale(100)).toBe('number');
     });

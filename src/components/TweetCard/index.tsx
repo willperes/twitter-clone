@@ -1,9 +1,10 @@
 import React from 'react';
 import { type TweetSummary } from '../../types/data/Tweet';
-import { Image, TouchableOpacity, View } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
 import { useLayout } from '../../hooks/useLayout';
 import { Text } from '../Layout';
 import { UserNickname } from '../UserNickname';
+import { UserPhoto } from '../UserPhoto';
 
 interface Props {
   data: TweetSummary;
@@ -26,15 +27,7 @@ export const TweetCard: React.FC<Props> = ({ data }) => {
       }}
     >
       <View style={{ flexDirection: 'row' }}>
-        <Image
-          testID={'tweet-card-user-photo'}
-          source={{
-            uri: data.publishedBy.photoURL,
-          }}
-          height={moderateScale(55)}
-          width={moderateScale(55)}
-          borderRadius={100}
-        />
+        <UserPhoto photoURL={data.publishedBy.photoURL} size={55} />
         <View style={{ flexShrink: 1, marginLeft: moderateScale(8) }}>
           <View style={{ flexDirection: 'row', alignItems: 'center' }}>
             <UserNickname userInformation={data.publishedBy} />

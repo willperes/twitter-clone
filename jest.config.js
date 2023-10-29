@@ -1,6 +1,12 @@
 module.exports = {
   preset: 'react-native',
   transformIgnorePatterns: [
-    'node_modules/(?!(@react-native|react-native|react-native-vector-icons)/)',
+    'node_modules/(?!((jest-)?react-native|@react-native(-community)?)|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules)',
   ],
+  moduleNameMapper: {
+    '\\.svg': '<rootDir>/src/__mocks__/svgMock.ts',
+  },
+  setupFiles: ['<rootDir>/jest.setup.ts'],
+  moduleDirectories: ['node_modules', './test'],
+  modulePathIgnorePatterns: ['mocks'],
 };

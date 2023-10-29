@@ -1,4 +1,5 @@
 interface BaseTweet {
+  id: number;
   publishedBy: TweetUserInformation;
   createdAt: Date;
   content: string;

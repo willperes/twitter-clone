@@ -1,9 +1,7 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Feather from 'react-native-vector-icons/Feather';
-import { View } from 'react-native';
 import { useLayout } from '../../hooks/useLayout';
-import { TweetCard } from '../../components/TweetCard';
-import { type TweetSummary } from '../../types/data/Tweet';
+import { FeedScreen } from '../../screens/FeedScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -56,34 +54,5 @@ export function TabNavigator(): React.ReactNode {
         }}
       />
     </Tab.Navigator>
-  );
-}
-
-function FeedScreen(): React.ReactNode {
-  const mockTweetSummary: TweetSummary = {
-    publishedBy: {
-      username: 'willperes',
-      nickname: 'Will',
-      photoURL: 'https://github.com/willperes.png',
-      verified: true,
-    },
-    content:
-      "Somebody once told me the world is gonna roll me\n\nI ain't the sharpest tool in the shed",
-    createdAt: new Date('2023-10-28T20:00:00.968Z'),
-    comments: 0,
-    retweets: 5,
-    likes: 20,
-  };
-
-  return (
-    <View
-      style={{
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-    >
-      <TweetCard data={mockTweetSummary} />
-    </View>
   );
 }
