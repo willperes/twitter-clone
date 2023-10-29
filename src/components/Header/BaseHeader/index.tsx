@@ -2,6 +2,7 @@ import { TouchableOpacity, View } from 'react-native';
 import { useLayout } from '../../../hooks/useLayout';
 import React from 'react';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { moderateScale, verticalScale } from '../../../utils/layout';
 
 interface Props {
   leadingComponent: React.ReactNode;
@@ -18,7 +19,7 @@ export const BaseHeader: React.FC<Props> = ({
   trailingCallback,
   titleComponent,
 }) => {
-  const { theme, moderateScale, verticalScale } = useLayout();
+  const { theme } = useLayout();
   const insets = useSafeAreaInsets();
 
   return (

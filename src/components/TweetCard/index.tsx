@@ -5,13 +5,14 @@ import { useLayout } from '../../hooks/useLayout';
 import { Text } from '../Layout';
 import { UserNickname } from '../UserNickname';
 import { UserPhoto } from '../UserPhoto';
+import { moderateScale } from '../../utils/layout';
 
 interface Props {
   data: TweetSummary;
 }
 
 export const TweetCard: React.FC<Props> = ({ data }) => {
-  const { moderateScale, theme } = useLayout();
+  const { theme } = useLayout();
 
   function handleTweetDetails(): void {}
 

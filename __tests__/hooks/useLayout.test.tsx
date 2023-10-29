@@ -20,31 +20,4 @@ describe('hooks/useLayout', () => {
       expect(result.current.theme).toEqual(mockTheme);
     });
   });
-
-  describe('moderateScale', () => {
-    it('should return a valid number', () => {
-      const { result } = renderHook(() => useLayout(), {
-        wrapper: TestingWrapper,
-      });
-      expect(typeof result.current.moderateScale(100)).toBe('number');
-    });
-  });
-
-  describe('horizontalScale', () => {
-    it('should return a valid number', () => {
-      const { result } = renderHook(() => useLayout(), {
-        wrapper: TestingWrapper,
-      });
-      expect(typeof result.current.moderateScale(100)).toBe('number');
-    });
-  });
-
-  describe('verticalScale', () => {
-    it('should return a valid number', () => {
-      const { result } = renderHook(() => useLayout(), {
-        wrapper: TestingWrapper,
-      });
-      expect(typeof result.current.moderateScale(100)).toBe('number');
-    });
-  });
 });

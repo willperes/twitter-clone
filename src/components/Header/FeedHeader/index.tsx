@@ -3,9 +3,10 @@ import { BaseHeader } from '../BaseHeader';
 import { UserPhoto } from '../../UserPhoto';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useLayout } from '../../../hooks/useLayout';
+import { moderateScale } from '../../../utils/layout';
 
 export const FeedHeader: React.FC = () => {
-  const { theme, moderateScale } = useLayout();
+  const { theme } = useLayout();
 
   return (
     <BaseHeader

@@ -2,11 +2,12 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Feather from 'react-native-vector-icons/Feather';
 import { useLayout } from '../../hooks/useLayout';
 import { FeedScreen } from '../../screens/FeedScreen';
+import { moderateScale } from '../../utils/layout';
 
 const Tab = createBottomTabNavigator();
 
 export function TabNavigator(): React.ReactNode {
-  const { theme, moderateScale } = useLayout();
+  const { theme } = useLayout();
 
   return (
     <Tab.Navigator

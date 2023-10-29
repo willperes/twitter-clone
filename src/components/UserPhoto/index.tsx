@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image } from 'react-native';
-import { useLayout } from '../../hooks/useLayout';
+import { moderateScale } from '../../utils/layout';
 
 interface Props {
   photoURL: string;
@@ -8,8 +8,6 @@ interface Props {
 }
 
 export const UserPhoto: React.FC<Props> = ({ photoURL, size }) => {
-  const { moderateScale } = useLayout();
-
   return (
     <Image
       testID={'user-photo'}

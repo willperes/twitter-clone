@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text as RawText, type TextProps } from 'react-native';
-import { useLayout } from '../../../hooks/useLayout';
+import { moderateScale } from '../../../utils/layout';
 
 interface Props extends TextProps {
   color?: string;
@@ -14,8 +14,6 @@ export const Text: React.FC<React.PropsWithChildren<Props>> = ({
   size,
   fontFamily,
 }) => {
-  const { moderateScale } = useLayout();
-
   return (
     <RawText
       style={{
