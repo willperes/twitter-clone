@@ -3,6 +3,7 @@ import Feather from 'react-native-vector-icons/Feather';
 import { useLayout } from '../../hooks/useLayout';
 import { FeedScreen } from '../../screens/FeedScreen';
 import { moderateScale } from '../../utils/layout';
+import { FeedHeader } from '../../components/Header/FeedHeader';
 
 const Tab = createBottomTabNavigator();
 
@@ -12,10 +13,10 @@ export function TabNavigator(): React.ReactNode {
   return (
     <Tab.Navigator
       screenOptions={{
-        headerShown: false,
         tabBarShowLabel: false,
         tabBarActiveTintColor: theme.colors.primary,
         tabBarInactiveTintColor: theme.colors.darkenText,
+        header: () => <FeedHeader />,
       }}
     >
       <Tab.Screen
