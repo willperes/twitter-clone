@@ -1,5 +1,4 @@
 import React from 'react';
-import { type TweetUserInformation } from '../../types/data/Tweet';
 import { View } from 'react-native';
 import { Text } from '../Layout';
 import { useLayout } from '../../hooks/useLayout';
@@ -7,28 +6,30 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { moderateScale } from '../../utils/layout';
 
 interface Props {
-  userInformation: TweetUserInformation;
+  nickname: string;
+  verified: boolean;
+  textSize?: number;
 }
 
-export const UserNickname: React.FC<Props> = ({ userInformation }) => {
+export const UserNickname: React.FC<Props> = ({ nickname, verified, textSize = 16 }) => {
   const { theme } = useLayout();
 
   return (
     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
       <Text
-        size={16}
+        size={textSize}
         fontFamily={theme.fonts.inter.semiBold}
         ellipsizeMode={'tail'}
         numberOfLines={1}
       >
-        {userInformation.nickname}
+        {nickname}
       </Text>
-      {userInformation.verified ? (
+      {verified ? (
         <MaterialIcons
-          testID={'tweet-card-verified-badge'}
+          testID={'verified-badge'}
           name={'verified'}
           color={theme.colors.primary}
-          size={moderateScale(14)}
+          size={moderateScale(textSize * 0.875)}
           style={{ marginLeft: moderateScale(2) }}
         />
       ) : null}

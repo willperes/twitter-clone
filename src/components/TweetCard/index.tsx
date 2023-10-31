@@ -32,7 +32,10 @@ export const TweetCard: React.FC<Props> = ({ data }) => {
         <UserPhoto photoURL={data.publishedBy.photoURL} size={55} />
         <View style={{ flexShrink: 1, marginLeft: moderateScale(8) }}>
           <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-            <UserNickname userInformation={data.publishedBy} />
+            <UserNickname
+              nickname={data.publishedBy.nickname}
+              verified={data.publishedBy.verified}
+            />
             <Text size={16} color={theme.colors.darkenText}>
               {' '}
               @
