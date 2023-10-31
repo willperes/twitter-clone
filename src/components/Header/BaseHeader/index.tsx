@@ -30,6 +30,8 @@ export const BaseHeader: React.FC<Props> = ({
           alignItems: 'center',
           height: moderateScale(42),
           paddingHorizontal: moderateScale(20),
+          borderBottomWidth: 0.25,
+          borderBottomColor: theme.colors.primarySeparator,
         }}
       >
         <TouchableOpacity testID={'header-leading-button'} onPress={leadingCallback}>

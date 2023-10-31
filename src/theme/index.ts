@@ -32,6 +32,7 @@ const colors = {
     primary: '#4C9EEB',
     backgroundColor: '#FFFFFF',
 
+    primarySeparator: '#BDC5CD',
     secondarySeparator: '#CED5DC',
 
     text: '#141619',

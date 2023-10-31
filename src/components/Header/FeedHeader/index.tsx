@@ -1,6 +1,6 @@
 import React from 'react';
 import { BaseHeader } from '../BaseHeader';
-import { UserPhoto } from '../../UserPhoto';
+import { UserPhoto } from '../../User/UserPhoto';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useLayout } from '../../../hooks/useLayout';
 import { moderateScale } from '../../../utils/layout';

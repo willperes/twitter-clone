@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image } from 'react-native';
-import { moderateScale } from '../../utils/layout';
+import { moderateScale } from '../../../utils/layout';
 
 interface Props {
   photoURL: string;

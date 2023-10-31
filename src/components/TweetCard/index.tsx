@@ -3,10 +3,11 @@ import { type TweetSummary } from '../../types/data/Tweet';
 import { TouchableOpacity, View } from 'react-native';
 import { useLayout } from '../../hooks/useLayout';
 import { Text } from '../Layout';
-import { UserNickname } from '../UserNickname';
-import { UserPhoto } from '../UserPhoto';
+import { UserNickname } from '../User/UserNickname';
+import { UserPhoto } from '../User/UserPhoto';
 import { moderateScale } from '../../utils/layout';
 import { TweetActions } from '../TweetActions';
+import { UserName } from '../User/UserName';
 
 interface Props {
   data: TweetSummary;
@@ -36,13 +37,8 @@ export const TweetCard: React.FC<Props> = ({ data }) => {
               nickname={data.publishedBy.nickname}
               verified={data.publishedBy.verified}
             />
-            <Text size={16} color={theme.colors.darkenText}>
-              {' '}
-              @
-            </Text>
-            <Text size={16} color={theme.colors.darkenText}>
-              {data.publishedBy.username}{' '}
-            </Text>
+            <Text> </Text>
+            <UserName username={data.publishedBy.username} />
             <Text size={16} color={theme.colors.darkenText}>
               · 10 s
             </Text>

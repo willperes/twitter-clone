@@ -1,9 +1,9 @@
 import React from 'react';
 import { View } from 'react-native';
-import { Text } from '../Layout';
-import { useLayout } from '../../hooks/useLayout';
+import { Text } from '../../Layout';
+import { useLayout } from '../../../hooks/useLayout';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import { moderateScale } from '../../utils/layout';
+import { moderateScale } from '../../../utils/layout';
 
 interface Props {
   nickname: string;

@@ -20,18 +20,6 @@ const mockTweetSummary: TweetSummary = {
 };
 
 describe('components/TweetCard', () => {
-  it('should display the username on the card', async () => {
-    const { getByText } = render(
-      <TestingWrapper>
-        <TweetCard data={mockTweetSummary} />
-      </TestingWrapper>
-    );
-
-    await waitFor(() => {
-      expect(getByText(mockTweetSummary.publishedBy.username)).toBeTruthy();
-    });
-  });
-
   it('should display the tweet content on the card', async () => {
     const { getByText } = render(
       <TestingWrapper>

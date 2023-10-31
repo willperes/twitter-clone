@@ -1,8 +1,8 @@
 import { render, waitFor } from '@testing-library/react-native';
-import { type TweetUserInformation } from '../../src/types/data/Tweet';
-import { UserNickname } from '../../src/components/UserNickname';
-import { TestingWrapper } from '../../__utils__/wrappers/TestingWrapper';
-import { moderateScale } from '../../src/utils/layout';
+import { type TweetUserInformation } from '../../../src/types/data/Tweet';
+import { UserNickname } from '../../../src/components/User/UserNickname';
+import { TestingWrapper } from '../../../__utils__/wrappers/TestingWrapper';
+import { moderateScale } from '../../../src/utils/layout';
 
 const userInformation: TweetUserInformation = {
   username: 'willperes',
@@ -18,7 +18,7 @@ const verifiedUserInformation: TweetUserInformation = {
 
 jest.mock('react-native-vector-icons/MaterialIcons', () => 'MockedMaterialIcons');
 
-describe('components/UserNickName', () => {
+describe('components/User/UserNickName', () => {
   it('should display the user nickname', async () => {
     const { getByText } = render(
       <TestingWrapper>
