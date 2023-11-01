@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyledBox } from './styles';
+import { type ViewProps } from 'react-native';
 
-export interface BoxProps {
+export interface BoxProps extends ViewProps {
   /** Accepts a number to apply the value to all directions or an array up to 4 values,
    * which will then distribute it by:
    * margin-top, margin-right, margin-bottom and margin-left respectively.

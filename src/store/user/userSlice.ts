@@ -4,6 +4,8 @@ import { type RootState } from '..';
 
 export interface UserState {
   currentUser: User;
+  followers: number;
+  following: number;
 }
 
 const initialState: UserState = {
@@ -13,6 +15,8 @@ const initialState: UserState = {
     photoURL: 'https://github.com/willperes.png',
     verified: true,
   },
+  followers: 924,
+  following: 127,
 };
 
 export const userSlice = createSlice({
@@ -23,6 +27,7 @@ export const userSlice = createSlice({
 
 // export const {} = userSlice.actions
 
+export const getUser = (state: RootState): UserState => state.user;
 export const getCurrentUser = (state: RootState): User => state.user.currentUser;
 
 export default userSlice.reducer;
