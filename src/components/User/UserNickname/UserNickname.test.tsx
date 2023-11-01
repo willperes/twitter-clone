@@ -1,8 +1,8 @@
 import { waitFor } from '@testing-library/react-native';
-import { type TweetUserInformation } from '../../../src/types/data/Tweet';
-import { UserNickname } from '../../../src/components/User/UserNickname';
-import { moderateScale } from '../../../src/utils/layout';
-import { render } from '../../../__utils__/render';
+import { type TweetUserInformation } from '../../../types/data/Tweet';
+import { UserNickname } from '.';
+import { moderateScale } from '../../../utils/layout';
+import { render } from '../../../../__utils__/render';
 
 const userInformation: TweetUserInformation = {
   username: 'willperes',

@@ -1,5 +1,5 @@
-import { render } from '../../../__utils__/render';
-import { UserFollowersText, UserFollowingText } from '../../../src/components/User/UserFollowText';
+import { render } from '../../../../__utils__/render';
+import { UserFollowersText, UserFollowingText } from '.';
 
 describe('components/User/UserFollowText', () => {
   describe('UserFollowing', () => {

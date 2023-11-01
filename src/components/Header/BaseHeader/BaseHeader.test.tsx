@@ -1,7 +1,7 @@
 import { fireEvent } from '@testing-library/react-native';
-import { BaseHeader } from '../../../src/components/Header/BaseHeader';
+import { BaseHeader } from '.';
 import { View } from 'react-native';
-import { render } from '../../../__utils__/render';
+import { render } from '../../../../__utils__/render';
 
 describe('components/header/BaseHeader', () => {
   it('should call the leading component callback function when it is pressed', () => {

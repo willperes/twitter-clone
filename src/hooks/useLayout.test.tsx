@@ -1,5 +1,5 @@
 import { renderHook } from '../../__utils__/renderHook';
-import { useLayout } from '../../src/hooks/useLayout';
+import { useLayout } from './useLayout';
 import { type DefaultTheme } from 'styled-components/native';
 
 const mockTheme = {

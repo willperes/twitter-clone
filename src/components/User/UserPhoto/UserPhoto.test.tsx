@@ -1,5 +1,5 @@
-import { UserPhoto } from '../../../src/components/User/UserPhoto';
-import { render } from '../../../__utils__/render';
+import { UserPhoto } from '.';
+import { render } from '../../../../__utils__/render';
 
 const photoURL = 'https://github.com/willperes.png';
 

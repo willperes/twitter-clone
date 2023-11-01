@@ -1,4 +1,4 @@
-import { horizontalScale, moderateScale, verticalScale } from '../../src/utils/layout';
+import { horizontalScale, moderateScale, verticalScale } from './layout';
 
 describe('utils/layout', () => {
   describe('moderateScale', () => {

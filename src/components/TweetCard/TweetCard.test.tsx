@@ -1,6 +1,6 @@
-import { render } from '../../__utils__/render';
-import { TweetCard } from '../../src/components/TweetCard';
-import { type TweetSummary } from '../../src/types/data/Tweet';
+import { render } from '../../../__utils__/render';
+import { TweetCard } from '.';
+import { type TweetSummary } from '../../types/data/Tweet';
 import { waitFor } from '@testing-library/react-native';
 
 const mockTweetSummary: TweetSummary = {

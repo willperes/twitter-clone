@@ -1,6 +1,6 @@
-import { render } from '../../../__utils__/render';
-import { Box } from '../../../src/components/Layout/Box';
-import { moderateScale } from '../../../src/utils/layout';
+import { render } from '../../../../__utils__/render';
+import { Box } from '.';
+import { moderateScale } from '../../../utils/layout';
 
 describe('components/layout/Box', () => {
   it('should have the correctly applied margins when provided with the m number prop', () => {

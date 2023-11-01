@@ -1,6 +1,6 @@
 import { waitFor } from '@testing-library/react-native';
-import { UserName } from '../../../src/components/User/UserName';
-import { render } from '../../../__utils__/render';
+import { UserName } from '.';
+import { render } from '../../../../__utils__/render';
 
 const username = 'willperes';
 

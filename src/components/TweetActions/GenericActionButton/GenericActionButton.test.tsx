@@ -1,6 +1,6 @@
 import { fireEvent } from '@testing-library/react-native';
-import { render } from '../../../__utils__/render';
-import { GenericActionButton } from '../../../src/components/TweetActions/GenericActionButton';
+import { render } from '../../../../__utils__/render';
+import { GenericActionButton } from '.';
 import { View } from 'react-native';
 
 describe('components/TweetActions/GenericActionButton', () => {
