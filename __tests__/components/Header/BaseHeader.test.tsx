@@ -1,21 +1,19 @@
-import { fireEvent, render } from '@testing-library/react-native';
+import { fireEvent } from '@testing-library/react-native';
 import { BaseHeader } from '../../../src/components/Header/BaseHeader';
 import { View } from 'react-native';
-import { TestingWrapper } from '../../../__utils__/wrappers/TestingWrapper';
+import { render } from '../../../__utils__/render';
 
 describe('components/header/BaseHeader', () => {
   it('should call the leading component callback function when it is pressed', () => {
     const leadingCallback = jest.fn();
 
     const { getByTestId } = render(
-      <TestingWrapper>
-        <BaseHeader
-          leadingCallback={leadingCallback}
-          leadingComponent={<View />}
-          trailingCallback={jest.fn()}
-          trailingComponent={<View />}
-        />
-      </TestingWrapper>
+      <BaseHeader
+        leadingCallback={leadingCallback}
+        leadingComponent={<View />}
+        trailingCallback={jest.fn()}
+        trailingComponent={<View />}
+      />
     );
 
     const button = getByTestId('header-leading-button');
@@ -28,14 +26,12 @@ describe('components/header/BaseHeader', () => {
     const trailingCallback = jest.fn();
 
     const { getByTestId } = render(
-      <TestingWrapper>
-        <BaseHeader
-          leadingCallback={jest.fn()}
-          leadingComponent={<View />}
-          trailingCallback={trailingCallback}
-          trailingComponent={<View />}
-        />
-      </TestingWrapper>
+      <BaseHeader
+        leadingCallback={jest.fn()}
+        leadingComponent={<View />}
+        trailingCallback={trailingCallback}
+        trailingComponent={<View />}
+      />
     );
 
     const button = getByTestId('header-trailing-button');

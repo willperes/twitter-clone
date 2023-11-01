@@ -1,5 +1,5 @@
-import { fireEvent, render } from '@testing-library/react-native';
-import { TestingWrapper } from '../../../__utils__/wrappers/TestingWrapper';
+import { fireEvent } from '@testing-library/react-native';
+import { render } from '../../../__utils__/render';
 import { GenericActionButton } from '../../../src/components/TweetActions/GenericActionButton';
 import { View } from 'react-native';
 
@@ -8,9 +8,7 @@ describe('components/TweetActions/GenericActionButton', () => {
     const callback = jest.fn();
 
     const { getByTestId } = render(
-      <TestingWrapper>
-        <GenericActionButton icon={<View />} count={10} callback={callback} />
-      </TestingWrapper>
+      <GenericActionButton icon={<View />} count={10} callback={callback} />
     );
 
     const button = getByTestId('button');
@@ -21,20 +19,14 @@ describe('components/TweetActions/GenericActionButton', () => {
 
   it('should display the count text correctly', () => {
     const { getByText } = render(
-      <TestingWrapper>
-        <GenericActionButton icon={<View />} count={10} callback={jest.fn()} />
-      </TestingWrapper>
+      <GenericActionButton icon={<View />} count={10} callback={jest.fn()} />
     );
 
     expect(getByText('10')).toBeTruthy();
   });
 
   it('should not display the count text when count is not provided', () => {
-    const { getByTestId } = render(
-      <TestingWrapper>
-        <GenericActionButton icon={<View />} callback={jest.fn()} />
-      </TestingWrapper>
-    );
+    const { getByTestId } = render(<GenericActionButton icon={<View />} callback={jest.fn()} />);
 
     expect(() => getByTestId('count')).toThrow();
   });

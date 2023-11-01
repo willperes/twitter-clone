@@ -1,8 +1,8 @@
-import { render, waitFor } from '@testing-library/react-native';
+import { waitFor } from '@testing-library/react-native';
 import { type TweetUserInformation } from '../../../src/types/data/Tweet';
 import { UserNickname } from '../../../src/components/User/UserNickname';
-import { TestingWrapper } from '../../../__utils__/wrappers/TestingWrapper';
 import { moderateScale } from '../../../src/utils/layout';
+import { render } from '../../../__utils__/render';
 
 const userInformation: TweetUserInformation = {
   username: 'willperes',
@@ -21,9 +21,7 @@ jest.mock('react-native-vector-icons/MaterialIcons', () => 'MockedMaterialIcons'
 describe('components/User/UserNickName', () => {
   it('should display the user nickname', async () => {
     const { getByText } = render(
-      <TestingWrapper>
-        <UserNickname nickname={userInformation.nickname} verified={userInformation.verified} />
-      </TestingWrapper>
+      <UserNickname nickname={userInformation.nickname} verified={userInformation.verified} />
     );
 
     await waitFor(() => {
@@ -33,12 +31,10 @@ describe('components/User/UserNickName', () => {
 
   it('should display the verified badge if the user is verified', () => {
     const { getByTestId } = render(
-      <TestingWrapper>
-        <UserNickname
-          nickname={verifiedUserInformation.nickname}
-          verified={verifiedUserInformation.verified}
-        />
-      </TestingWrapper>
+      <UserNickname
+        nickname={verifiedUserInformation.nickname}
+        verified={verifiedUserInformation.verified}
+      />
     );
 
     expect(getByTestId('verified-badge')).toBeTruthy();
@@ -46,9 +42,7 @@ describe('components/User/UserNickName', () => {
 
   it('should not display the verified badge if the user is not verified', () => {
     const { getByTestId } = render(
-      <TestingWrapper>
-        <UserNickname nickname={userInformation.nickname} verified={userInformation.verified} />
-      </TestingWrapper>
+      <UserNickname nickname={userInformation.nickname} verified={userInformation.verified} />
     );
 
     expect(() => getByTestId('verified-badge')).toThrow();
@@ -56,13 +50,11 @@ describe('components/User/UserNickName', () => {
 
   it('should change the text and icon size proportionally when provided with the textSize prop', () => {
     const { getByText, getByTestId } = render(
-      <TestingWrapper>
-        <UserNickname
-          nickname={verifiedUserInformation.nickname}
-          verified={verifiedUserInformation.verified}
-          textSize={20}
-        />
-      </TestingWrapper>
+      <UserNickname
+        nickname={verifiedUserInformation.nickname}
+        verified={verifiedUserInformation.verified}
+        textSize={20}
+      />
     );
 
     const text = getByText(verifiedUserInformation.nickname);

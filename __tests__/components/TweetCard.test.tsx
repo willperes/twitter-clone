@@ -1,7 +1,7 @@
-import { TestingWrapper } from '../../__utils__/wrappers/TestingWrapper';
+import { render } from '../../__utils__/render';
 import { TweetCard } from '../../src/components/TweetCard';
 import { type TweetSummary } from '../../src/types/data/Tweet';
-import { render, waitFor } from '@testing-library/react-native';
+import { waitFor } from '@testing-library/react-native';
 
 const mockTweetSummary: TweetSummary = {
   id: 1,
@@ -21,11 +21,7 @@ const mockTweetSummary: TweetSummary = {
 
 describe('components/TweetCard', () => {
   it('should display the tweet content on the card', async () => {
-    const { getByText } = render(
-      <TestingWrapper>
-        <TweetCard data={mockTweetSummary} />
-      </TestingWrapper>
-    );
+    const { getByText } = render(<TweetCard data={mockTweetSummary} />);
 
     await waitFor(() => {
       expect(getByText(mockTweetSummary.content)).toBeTruthy();
