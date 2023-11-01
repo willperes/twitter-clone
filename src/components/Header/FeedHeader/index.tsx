@@ -5,10 +5,13 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import { useLayout } from '../../../hooks/useLayout';
 import { moderateScale } from '../../../utils/layout';
 import { DrawerActions, useNavigation } from '@react-navigation/native';
+import { useAppSelector } from '../../../hooks/redux/useAppSelector';
+import { getCurrentUser } from '../../../store/user/userSlice';
 
 export const FeedHeader: React.FC = () => {
   const { theme } = useLayout();
   const navigation = useNavigation();
+  const currentUser = useAppSelector(getCurrentUser);
 
   function leadingCallback(): void {
     navigation.dispatch(DrawerActions.openDrawer());
@@ -17,7 +20,7 @@ export const FeedHeader: React.FC = () => {
   return (
     <BaseHeader
       leadingCallback={leadingCallback}
-      leadingComponent={<UserPhoto photoURL={'https://github.com/willperes.png'} size={32} />}
+      leadingComponent={<UserPhoto photoURL={currentUser.photoURL} size={32} />}
       trailingCallback={() => {}}
       trailingComponent={
         <MaterialCommunityIcons
