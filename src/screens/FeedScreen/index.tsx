@@ -1,8 +1,8 @@
 import React from 'react';
 import { FlatList, View } from 'react-native';
-import { TweetCard } from '../components/Tweet/TweetCard';
-import { type TweetSummary } from '../types/data/Tweet';
-import { useLayout } from '../hooks/useLayout';
+import { TweetCard } from '../../components/Tweet/TweetCard';
+import { type TweetSummary } from '../../types/data/Tweet';
+import { useLayout } from '../../hooks/useLayout';
 
 const mockTweetSummary: TweetSummary = {
   id: 1,
