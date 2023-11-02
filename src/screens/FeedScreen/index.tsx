@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { FlatList, View } from 'react-native';
 import { TweetCard } from '../../components/Tweet/TweetCard';
 import { type TweetSummary } from '../../types/data/Tweet';
 import { useLayout } from '../../hooks/useLayout';
+import { useScrollToTop } from '@react-navigation/native';
 
 const mockTweetSummary: TweetSummary = {
   id: 1,
@@ -36,10 +37,14 @@ const tweets = [
 ];
 
 export const FeedScreen: React.FC = () => {
+  const listRef = useRef<FlatList>(null);
   const { theme } = useLayout();
+
+  useScrollToTop(listRef);
 
   return (
     <FlatList
+      ref={listRef}
       data={tweets}
       renderItem={({ item }) => <TweetCard data={item} />}
       keyExtractor={() => `tweet-${Math.random()}-summary`}

@@ -2,12 +2,17 @@ import styled from 'styled-components/native';
 import { Box, type BoxProps } from '../Box';
 import { moderateScale } from '../../../utils/layout';
 
-export const Separator: React.FC<BoxProps> = ({ ...rest }) => {
+interface Props extends BoxProps {
+  separatorColor?: 'primary' | 'secondary';
+}
+
+export const Separator: React.FC<Props> = ({ separatorColor = 'secondary', ...rest }) => {
   return <RawSeparator {...rest} />;
 };
 
-const RawSeparator = styled(Box)`
+const RawSeparator = styled(Box)<Props>`
   height: ${moderateScale(0.35)}px;
   width: 100%;
-  background-color: ${({ theme }) => theme.colors.primarySeparator};
+  background-color: ${({ theme, separatorColor }) =>
+    separatorColor === 'primary' ? theme.colors.primarySeparator : theme.colors.secondarySeparator};
 `;

@@ -8,6 +8,7 @@ const fonts = {
         medium: 'Inter-Medium',
         semiBold: 'Inter-SemiBold',
         bold: 'Inter-Bold',
+        extraBold: 'Inter-ExtraBold'
       },
     },
     default: {
@@ -16,6 +17,7 @@ const fonts = {
         medium: 'InterMedium',
         semiBold: 'InterSemiBold',
         bold: 'InterBold',
+        extraBold: 'InterExtraBold'
       },
     },
   }),
@@ -31,6 +33,7 @@ const colors = {
   colors: {
     primary: '#4C9EEB',
     backgroundColor: '#FFFFFF',
+    darkerBackgroundColor: '#E7ECF0',
 
     primarySeparator: '#BDC5CD',
     secondarySeparator: '#CED5DC',
