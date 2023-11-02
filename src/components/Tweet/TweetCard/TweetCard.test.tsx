@@ -1,6 +1,6 @@
-import { render } from '../../../__utils__/render';
+import { render } from '../../../../__utils__/render';
 import { TweetCard } from '.';
-import { type TweetSummary } from '../../types/data/Tweet';
+import { type TweetSummary } from '../../../types/data/Tweet';
 import { waitFor } from '@testing-library/react-native';
 
 const mockTweetSummary: TweetSummary = {
@@ -19,7 +19,7 @@ const mockTweetSummary: TweetSummary = {
   likes: 20,
 };
 
-describe('components/TweetCard', () => {
+describe('components/Tweet/TweetCard', () => {
   it('should display the tweet content on the card', async () => {
     const { getByText } = render(<TweetCard data={mockTweetSummary} />);
 

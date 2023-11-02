@@ -1,9 +1,9 @@
 import { fireEvent } from '@testing-library/react-native';
-import { render } from '../../../../__utils__/render';
+import { render } from '../../../../../__utils__/render';
 import { GenericActionButton } from '.';
 import { View } from 'react-native';
 
-describe('components/TweetActions/GenericActionButton', () => {
+describe('components/Tweet/TweetActions/GenericActionButton', () => {
   it('should call the callback function when pressed', () => {
     const callback = jest.fn();
 

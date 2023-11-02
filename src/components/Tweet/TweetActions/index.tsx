@@ -1,12 +1,12 @@
 import React from 'react';
 import { View } from 'react-native';
 import { GenericActionButton } from './GenericActionButton';
-import { useLayout } from '../../hooks/useLayout';
-import CommentStroke from '../../assets/icons/comment-stroke.svg';
-import RetweetStroke from '../../assets/icons/retweet-stroke.svg';
-import HeartStroke from '../../assets/icons/heart-stroke.svg';
-import ShareStroke from '../../assets/icons/share-stroke.svg';
-import { moderateScale } from '../../utils/layout';
+import { useLayout } from '../../../hooks/useLayout';
+import CommentStroke from '../../../assets/icons/comment-stroke.svg';
+import RetweetStroke from '../../../assets/icons/retweet-stroke.svg';
+import HeartStroke from '../../../assets/icons/heart-stroke.svg';
+import ShareStroke from '../../..//assets/icons/share-stroke.svg';
+import { moderateScale } from '../../../utils/layout';
 
 interface Props {
   iconSize: number;

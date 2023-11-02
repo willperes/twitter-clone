@@ -110,4 +110,15 @@ describe('components/layout/Box', () => {
     const box = getByTestId('box');
     expect(box).toHaveStyle({ paddingBottom: moderateScale(10) });
   });
+
+  it('should apply correctly the box props as styles', () => {
+    const { getByTestId } = render(<Box fd={'row'} align={'center'} justify={'space-between'} />);
+
+    const box = getByTestId('box');
+    expect(box).toHaveStyle({
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+    });
+  });
 });

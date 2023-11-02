@@ -86,4 +86,22 @@ export const StyledBox = styled.View<BoxProps>`
     css`
       margin-left: ${moderateScale(ml)}px;
     `}
+
+    ${({ fd }) =>
+    fd &&
+    css`
+      flex-direction: ${fd};
+    `}
+
+    ${({ justify }) =>
+    justify &&
+    css`
+      justify-content: ${justify};
+    `}
+
+    ${({ align }) =>
+    align &&
+    css`
+      align-items: ${align};
+    `}
 `;

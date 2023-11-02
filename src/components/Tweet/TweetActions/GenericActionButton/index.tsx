@@ -1,8 +1,8 @@
 import React from 'react';
 import { type GestureResponderEvent, TouchableOpacity, View } from 'react-native';
-import { useLayout } from '../../../hooks/useLayout';
-import { Text } from '../../Layout';
-import { moderateScale } from '../../../utils/layout';
+import { useLayout } from '../../../../hooks/useLayout';
+import { Text } from '../../../Layout';
+import { moderateScale } from '../../../../utils/layout';
 
 interface Props {
   callback: () => void;

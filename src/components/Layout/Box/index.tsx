@@ -24,6 +24,21 @@ export interface BoxProps extends ViewProps {
   pr?: number;
   pb?: number;
   pl?: number;
+
+  /** Responsible for setting the Box flexDirection */
+  fd?: 'row' | 'column';
+
+  /** Responsible for setting the Box items alignment */
+  align?: 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch';
+
+  /** Responsible for justifying the Box content */
+  justify?:
+    | 'flex-start'
+    | 'flex-end'
+    | 'center'
+    | 'space-between'
+    | 'space-evenly'
+    | 'space-around';
 }
 
 export const Box: React.FC<React.PropsWithChildren<BoxProps>> = ({ children, ...props }) => {

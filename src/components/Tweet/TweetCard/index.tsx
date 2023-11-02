@@ -1,13 +1,13 @@
 import React from 'react';
-import { type TweetSummary } from '../../types/data/Tweet';
+import { type TweetSummary } from '../../../types/data/Tweet';
 import { TouchableOpacity, View } from 'react-native';
-import { useLayout } from '../../hooks/useLayout';
-import { Text } from '../Layout';
-import { UserNickname } from '../User/UserNickname';
-import { UserPhoto } from '../User/UserPhoto';
-import { moderateScale } from '../../utils/layout';
+import { useLayout } from '../../../hooks/useLayout';
+import { Text } from '../../Layout';
+import { UserNickname } from '../../User/UserNickname';
+import { UserPhoto } from '../../User/UserPhoto';
+import { moderateScale } from '../../../utils/layout';
 import { TweetActions } from '../TweetActions';
-import { UserName } from '../User/UserName';
+import { UserName } from '../../User/UserName';
 
 interface Props {
   data: TweetSummary;
