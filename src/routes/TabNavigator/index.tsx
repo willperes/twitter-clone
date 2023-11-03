@@ -4,6 +4,7 @@ import { useLayout } from '../../hooks/useLayout';
 import { FeedScreen } from '../../screens/FeedScreen';
 import { moderateScale } from '../../utils/layout';
 import { FeedHeader } from '../../components/Header/FeedHeader';
+import { SearchScreen } from '../../screens/SearchScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -30,7 +31,7 @@ export function TabNavigator(): React.ReactNode {
       />
       <Tab.Screen
         name={'Search'}
-        component={FeedScreen}
+        component={SearchScreen}
         options={{
           tabBarIcon: ({ color }) => (
             <Feather name={'search'} size={moderateScale(22)} color={color} />
