@@ -16,6 +16,7 @@ export function DrawerNavigator(): React.ReactNode {
           width: DRAWER_WIDTH,
         },
       }}
+      initialRouteName={'HomeDrawer'}
     >
       <Drawer.Screen name={'HomeDrawer'} component={TabNavigator} />
     </Drawer.Navigator>
