@@ -7,6 +7,7 @@ import { FeedHeader } from '../../components/Header/FeedHeader';
 import { SearchTab } from '../../screens/SearchTab';
 import { NotificationsTopTabNavigator } from '../NotificationsTopTabNavigator';
 import { TitleHeader } from '../../components/Header/TitleHeader';
+import { SearchHeader } from '../../components/Header/SearchHeader';
 
 const Tab = createBottomTabNavigator();
 
@@ -39,6 +40,7 @@ export function TabNavigator(): React.ReactNode {
           tabBarIcon: ({ color }) => (
             <Feather name={'search'} size={moderateScale(22)} color={color} />
           ),
+          header: () => <SearchHeader />,
         }}
       />
       <Tab.Screen

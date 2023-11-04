@@ -7,8 +7,9 @@ import { moderateScale } from '../../../utils/layout';
 import { DrawerActions, useNavigation } from '@react-navigation/native';
 import { useAppSelector } from '../../../hooks/redux/useAppSelector';
 import { getCurrentUser } from '../../../store/user/userSlice';
+import { SearchBar } from '../../SearchBar';
 
-export const FeedHeader: React.FC = () => {
+export const SearchHeader: React.FC = () => {
   const { theme } = useLayout();
   const navigation = useNavigation();
   const currentUser = useAppSelector(getCurrentUser);
@@ -29,13 +30,7 @@ export const FeedHeader: React.FC = () => {
           size={moderateScale(22)}
         />
       }
-      titleComponent={
-        <MaterialCommunityIcons
-          name={'bird'}
-          color={theme.colors.primary}
-          size={moderateScale(32)}
-        />
-      }
+      titleComponent={<SearchBar displayOnly />}
     />
   );
 };
