@@ -4,12 +4,17 @@ import React from 'react';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { moderateScale } from '../../../utils/layout';
 
-interface Props {
+export interface BaseHeaderProps {
+  hideBottomBorder?: boolean;
+}
+
+interface Props extends BaseHeaderProps {
   leadingComponent: React.ReactNode;
   leadingCallback: () => void;
   trailingComponent: React.ReactNode;
   trailingCallback: () => void;
   titleComponent?: React.ReactNode;
+  hideBottomBorder?: boolean;
 }
 
 export const BaseHeader: React.FC<Props> = ({
@@ -18,6 +23,7 @@ export const BaseHeader: React.FC<Props> = ({
   trailingComponent,
   trailingCallback,
   titleComponent,
+  hideBottomBorder = false,
 }) => {
   const { theme } = useLayout();
   const insets = useSafeAreaInsets();
@@ -30,7 +36,7 @@ export const BaseHeader: React.FC<Props> = ({
           alignItems: 'center',
           height: moderateScale(42),
           paddingHorizontal: moderateScale(20),
-          borderBottomWidth: 0.25,
+          borderBottomWidth: hideBottomBorder ? 0 : 0.25,
           borderBottomColor: theme.colors.primarySeparator,
         }}
       >

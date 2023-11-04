@@ -15,7 +15,7 @@ export const Routes: React.FC = () => {
         colors: { ...DefaultTheme.colors, background: theme.colors.darkerBackgroundColor },
       }}
     >
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Navigator initialRouteName={'Home'} screenOptions={{ headerShown: false }}>
         <Stack.Screen name={'Home'} component={DrawerNavigator} />
       </Stack.Navigator>
     </NavigationContainer>
