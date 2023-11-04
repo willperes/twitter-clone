@@ -1,6 +1,6 @@
-import { type NavigatorScreenParams } from "@react-navigation/native";
-import { type BottomTabParamList } from "./BottomTabParamList";
+import { type NavigatorScreenParams } from '@react-navigation/native';
+import { type DrawerNavigatorParamList } from './DrawerNavigatorParamList';
 
 export interface RootStackParamList {
-  Home: NavigatorScreenParams<BottomTabParamList>;
+  Home: NavigatorScreenParams<DrawerNavigatorParamList>;
 }

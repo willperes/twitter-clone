@@ -1,9 +1,9 @@
 import React from 'react';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import { FeedTab } from '../../screens/FeedTab';
-import { moderateScale } from '../../utils/layout';
-import { SEPARATOR_WIDTH } from '../../theme/constants';
-import { useLayout } from '../../hooks/useLayout';
+import { FeedTab } from '../../../../screens/FeedTab';
+import { moderateScale } from '../../../../utils/layout';
+import { SEPARATOR_WIDTH } from '../../../../theme/constants';
+import { useLayout } from '../../../../hooks/useLayout';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -31,14 +31,18 @@ export const NotificationsTopTabNavigator: React.FC = () => {
           backgroundColor: theme.colors.primary,
         },
       }}
-      initialRouteName={'AllNotificationsTab'}
+      initialRouteName={'AllNotificationsTopTab'}
     >
       <Tab.Screen
-        name={'AllNotificationsTab'}
+        name={'AllNotificationsTopTab'}
         component={FeedTab}
         options={{ tabBarLabel: 'All' }}
       />
-      <Tab.Screen name={'MentionsTab'} component={FeedTab} options={{ tabBarLabel: 'Mentions' }} />
+      <Tab.Screen
+        name={'MentionsTopTab'}
+        component={FeedTab}
+        options={{ tabBarLabel: 'Mentions' }}
+      />
     </Tab.Navigator>
   );
 };

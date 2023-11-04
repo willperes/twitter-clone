@@ -1,17 +1,16 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Feather from 'react-native-vector-icons/Feather';
-import { useLayout } from '../../hooks/useLayout';
-import { FeedTab } from '../../screens/FeedTab';
-import { moderateScale } from '../../utils/layout';
-import { FeedHeader } from '../../components/Header/FeedHeader';
-import { SearchTab } from '../../screens/SearchTab';
-import { NotificationsTopTabNavigator } from '../NotificationsTopTabNavigator';
-import { TitleHeader } from '../../components/Header/TitleHeader';
-import { SearchHeader } from '../../components/Header/SearchHeader';
+import { useLayout } from '../../../hooks/useLayout';
+import { FeedTab } from '../../../screens/FeedTab';
+import { moderateScale } from '../../../utils/layout';
+import { FeedHeader } from '../../../components/Header/FeedHeader';
+import { NotificationsTopTabNavigator } from './NotificationsTopTabNavigator';
+import { TitleHeader } from '../../../components/Header/TitleHeader';
+import { SearchStackNavigator } from './SearchStackNavigator';
 
 const Tab = createBottomTabNavigator();
 
-export function TabNavigator(): React.ReactNode {
+export function BottomTabNavigator(): React.ReactNode {
   const { theme } = useLayout();
 
   return (
@@ -22,10 +21,10 @@ export function TabNavigator(): React.ReactNode {
         tabBarInactiveTintColor: theme.colors.darkenText,
         header: () => <FeedHeader />,
       }}
-      initialRouteName={'FeedTab'}
+      initialRouteName={'FeedBottomTab'}
     >
       <Tab.Screen
-        name={'FeedTab'}
+        name={'FeedBottomTab'}
         component={FeedTab}
         options={{
           tabBarIcon: ({ color }) => (
@@ -34,17 +33,17 @@ export function TabNavigator(): React.ReactNode {
         }}
       />
       <Tab.Screen
-        name={'SearchTab'}
-        component={SearchTab}
+        name={'SearchBottomTab'}
+        component={SearchStackNavigator}
         options={{
           tabBarIcon: ({ color }) => (
             <Feather name={'search'} size={moderateScale(22)} color={color} />
           ),
-          header: () => <SearchHeader />,
+          headerShown: false,
         }}
       />
       <Tab.Screen
-        name={'NotificationsTab'}
+        name={'NotificationsBottomTab'}
         component={NotificationsTopTabNavigator}
         options={{
           tabBarIcon: ({ color }) => (
@@ -54,7 +53,7 @@ export function TabNavigator(): React.ReactNode {
         }}
       />
       <Tab.Screen
-        name={'DirectMessagesTab'}
+        name={'DirectMessagesBottomTab'}
         component={FeedTab}
         options={{
           tabBarIcon: ({ color }) => (

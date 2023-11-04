@@ -1,8 +1,8 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import React from 'react';
-import { TabNavigator } from '../TabNavigator';
 import { DrawerContent } from '../../components/Drawer/DrawerContent';
 import { DRAWER_WIDTH } from '../../theme/constants';
+import { BottomTabNavigator } from './BottomTabNavigator';
 
 const Drawer = createDrawerNavigator();
 
@@ -16,9 +16,9 @@ export function DrawerNavigator(): React.ReactNode {
           width: DRAWER_WIDTH,
         },
       }}
-      initialRouteName={'HomeDrawer'}
+      initialRouteName={'DrawerHome'}
     >
-      <Drawer.Screen name={'HomeDrawer'} component={TabNavigator} />
+      <Drawer.Screen name={'DrawerHome'} component={BottomTabNavigator} />
     </Drawer.Navigator>
   );
 }
