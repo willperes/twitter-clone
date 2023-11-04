@@ -56,6 +56,8 @@ And the tests should execute correctly
 
 # Screenshots
 
-<img alt="Drawer navigation showing the user's information and app options" src="https://i.imgur.com/hgRsnkv.png" style="height: auto; width: 200px">
-<img alt="Notifications screen with some mocked tweets for testing" src="https://i.imgur.com/NxZNKsl.png" style="height: auto; width: 200px">
-<img alt="Search pages displaying that there are no new trends available for the user" src="https://i.imgur.com/567GmA0.png" style="height: auto; width: 200px">
+<div style="flex-direction: row">
+   <img alt="Drawer navigation showing the user's information and app options" src="https://i.imgur.com/hgRsnkv.png" style="height: auto; width: 200px">
+   <img alt="Notifications screen with some mocked tweets for testing" src="https://i.imgur.com/NxZNKsl.png" style="height: auto; width: 200px">
+   <img alt="Search pages displaying that there are no new trends available for the user" src="https://i.imgur.com/567GmA0.png" style="height: auto; width: 200px">
+</div>
