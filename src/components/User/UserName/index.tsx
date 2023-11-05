@@ -13,10 +13,10 @@ export const UserName: React.FC<Props> = ({ username, textSize = 16 }) => {
 
   return (
     <View style={{ flexDirection: 'row' }}>
-      <Text size={textSize} color={theme.colors.darkenText}>
+      <Text fontSize={textSize} color={theme.colors.darkenText}>
         @
       </Text>
-      <Text size={textSize} color={theme.colors.darkenText}>
+      <Text fontSize={textSize} color={theme.colors.darkenText}>
         {username}{' '}
       </Text>
     </View>

@@ -13,7 +13,7 @@ export const Separator: React.FC<Props> = ({ separatorColor = 'secondary', ...re
 
 const RawSeparator = styled(Box)<Props>`
   height: ${moderateScale(SEPARATOR_WIDTH)}px;
-  width: 100%;
+  flex: 1;
   background-color: ${({ theme, separatorColor }) =>
     separatorColor === 'primary' ? theme.colors.primarySeparator : theme.colors.secondarySeparator};
 `;

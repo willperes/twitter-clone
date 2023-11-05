@@ -39,11 +39,11 @@ export const TweetCard: React.FC<Props> = ({ data }) => {
             />
             <Text> </Text>
             <UserName username={data.publishedBy.username} />
-            <Text size={16} color={theme.colors.darkenText}>
+            <Text fontSize={16} color={theme.colors.darkenText}>
               · 10 s
             </Text>
           </View>
-          <Text size={16}>{data.content}</Text>
+          <Text fontSize={16}>{data.content}</Text>
           <View style={{ marginTop: moderateScale(10) }}>
             <TweetActions
               iconSize={20}

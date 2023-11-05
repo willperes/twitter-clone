@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from './styles';
 import { Box } from '../../../Layout/Box';
-import { Button } from '../../../Button';
+import { Button } from '../../../Buttons/Button';
 
 export const EmptyTrends: React.FC = () => {
   return (

@@ -17,7 +17,7 @@ export const UserNickname: React.FC<Props> = ({ nickname, verified, textSize = 1
   return (
     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
       <Text
-        size={textSize}
+        fontSize={textSize}
         fontFamily={theme.fonts.inter.semiBold}
         ellipsizeMode={'tail'}
         numberOfLines={1}

@@ -35,7 +35,7 @@ export const TitleHeader: React.FC<Props> = ({ title, ...rest }) => {
         />
       }
       titleComponent={
-        <Text size={17} fontFamily={theme.fonts.inter.extraBold}>
+        <Text fontSize={17} fontFamily={theme.fonts.inter.extraBold}>
           {title}
         </Text>
       }

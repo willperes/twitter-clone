@@ -5,22 +5,26 @@ import { Box } from '../../Layout/Box';
 
 interface Props {
   count: number;
-  size?: number;
+  fontSize?: number;
 }
 
 const BaseText: React.FC<{
   text: string;
   count: number;
-  size?: number;
-}> = ({ text, count, size = 16 }) => {
+  fontSize?: number;
+}> = ({ text, count, fontSize = 16 }) => {
   const { theme } = useLayout();
 
   return (
     <Box style={{ flexDirection: 'row' }}>
-      <Text size={size} fontFamily={theme.fonts.inter.medium}>
+      <Text fontSize={fontSize} fontFamily={theme.fonts.inter.medium}>
         {count}
       </Text>
-      <Text size={size} fontFamily={theme.fonts.inter.regular} color={theme.colors.darkenText}>
+      <Text
+        fontSize={fontSize}
+        fontFamily={theme.fonts.inter.regular}
+        color={theme.colors.darkenText}
+      >
         {' '}
         {text}
       </Text>
@@ -28,12 +32,12 @@ const BaseText: React.FC<{
   );
 };
 
-const UserFollowingText: React.FC<Props> = ({ count, size }) => {
-  return <BaseText text={'Following'} count={count} size={size} />;
+const UserFollowingText: React.FC<Props> = ({ count, fontSize }) => {
+  return <BaseText text={'Following'} count={count} fontSize={fontSize} />;
 };
 
-const UserFollowersText: React.FC<Props> = ({ count, size }) => {
-  return <BaseText text={'Followers'} count={count} size={size} />;
+const UserFollowersText: React.FC<Props> = ({ count, fontSize }) => {
+  return <BaseText text={'Followers'} count={count} fontSize={fontSize} />;
 };
 
 const InlineUserFollowText: React.FC<{ followingCount: number; followerCount: number }> = ({
