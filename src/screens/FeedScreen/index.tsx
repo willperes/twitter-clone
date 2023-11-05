@@ -36,7 +36,7 @@ const tweets = [
   mockTweetSummary,
 ];
 
-export const FeedTab: React.FC = () => {
+export const FeedScreen: React.FC = () => {
   const listRef = useRef<FlatList>(null);
   const { theme } = useLayout();
 

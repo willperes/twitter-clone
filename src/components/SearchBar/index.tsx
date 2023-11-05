@@ -14,6 +14,7 @@ export const SearchBar: React.FC<Props> = ({ displayOnly = false, ...rest }) => 
         testID={'search-bar-input'}
         editable={displayOnly ? false : rest.editable}
         style={{ flex: displayOnly ? undefined : 1 }}
+        pointerEvents={displayOnly ? 'none' : rest.pointerEvents}
         {...rest}
       />
     </S.Wrapper>

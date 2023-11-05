@@ -1,6 +1,6 @@
 import { type NavigatorScreenParams } from '@react-navigation/native';
-import { type DrawerNavigatorParamList } from './DrawerNavigatorParamList';
+import { type RootDrawerParamList } from './RootDrawerParamList';
 
 export interface RootStackParamList {
-  Home: NavigatorScreenParams<DrawerNavigatorParamList>;
+  RootDrawer: NavigatorScreenParams<RootDrawerParamList>;
 }

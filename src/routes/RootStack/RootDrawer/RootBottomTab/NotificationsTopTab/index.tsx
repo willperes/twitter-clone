@@ -1,17 +1,17 @@
-import React from 'react';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import { FeedTab } from '../../../../screens/FeedTab';
-import { moderateScale } from '../../../../utils/layout';
-import { SEPARATOR_WIDTH } from '../../../../theme/constants';
-import { useLayout } from '../../../../hooks/useLayout';
+import React from 'react';
+import { FeedScreen } from '../../../../../screens/FeedScreen';
+import { moderateScale } from '../../../../../utils/layout';
+import { SEPARATOR_WIDTH } from '../../../../../theme/constants';
+import { useLayout } from '../../../../../hooks/useLayout';
 
-const Tab = createMaterialTopTabNavigator();
+const TopTab = createMaterialTopTabNavigator();
 
-export const NotificationsTopTabNavigator: React.FC = () => {
+export const NotificationsTopTab: React.FC = () => {
   const { theme } = useLayout();
 
   return (
-    <Tab.Navigator
+    <TopTab.Navigator
       screenOptions={{
         tabBarItemStyle: {
           minHeight: moderateScale(44),
@@ -31,18 +31,9 @@ export const NotificationsTopTabNavigator: React.FC = () => {
           backgroundColor: theme.colors.primary,
         },
       }}
-      initialRouteName={'AllNotificationsTopTab'}
     >
-      <Tab.Screen
-        name={'AllNotificationsTopTab'}
-        component={FeedTab}
-        options={{ tabBarLabel: 'All' }}
-      />
-      <Tab.Screen
-        name={'MentionsTopTab'}
-        component={FeedTab}
-        options={{ tabBarLabel: 'Mentions' }}
-      />
-    </Tab.Navigator>
+      <TopTab.Screen name={'All'} component={FeedScreen} />
+      <TopTab.Screen name={'Mentions'} component={FeedScreen} />
+    </TopTab.Navigator>
   );
 };

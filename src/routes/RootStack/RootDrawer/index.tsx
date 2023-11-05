@@ -1,12 +1,12 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import React from 'react';
-import { DrawerContent } from '../../components/Drawer/DrawerContent';
-import { DRAWER_WIDTH } from '../../theme/constants';
-import { BottomTabNavigator } from './BottomTabNavigator';
+import { RootBottomTab } from './RootBottomTab';
+import { DrawerContent } from '../../../components/Drawer/DrawerContent';
+import { DRAWER_WIDTH } from '../../../theme/constants';
 
 const Drawer = createDrawerNavigator();
 
-export function DrawerNavigator(): React.ReactNode {
+export const RootDrawer: React.FC = () => {
   return (
     <Drawer.Navigator
       drawerContent={(props) => <DrawerContent {...props} />}
@@ -16,9 +16,8 @@ export function DrawerNavigator(): React.ReactNode {
           width: DRAWER_WIDTH,
         },
       }}
-      initialRouteName={'DrawerHome'}
     >
-      <Drawer.Screen name={'DrawerHome'} component={BottomTabNavigator} />
+      <Drawer.Screen name={'RootBottomTab'} component={RootBottomTab} />
     </Drawer.Navigator>
   );
-}
+};

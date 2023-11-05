@@ -8,6 +8,7 @@ import { DrawerActions, useNavigation } from '@react-navigation/native';
 import { useAppSelector } from '../../../hooks/redux/useAppSelector';
 import { getCurrentUser } from '../../../store/user/userSlice';
 import { SearchBar } from '../../SearchBar';
+import { Pressable } from 'react-native';
 
 export const SearchHeader: React.FC = () => {
   const { theme } = useLayout();
@@ -16,6 +17,18 @@ export const SearchHeader: React.FC = () => {
 
   function leadingCallback(): void {
     navigation.dispatch(DrawerActions.openDrawer());
+  }
+
+  function navigateToActiveSearch(): void {
+    navigation.navigate('RootDrawer', {
+      screen: 'RootBottomTab',
+      params: {
+        screen: 'SearchScreen',
+        params: {
+          screen: 'Active',
+        },
+      },
+    });
   }
 
   return (
@@ -30,7 +43,11 @@ export const SearchHeader: React.FC = () => {
           size={moderateScale(22)}
         />
       }
-      titleComponent={<SearchBar displayOnly />}
+      titleComponent={
+        <Pressable style={{ width: '100%' }} onPress={navigateToActiveSearch}>
+          <SearchBar displayOnly />
+        </Pressable>
+      }
     />
   );
 };
