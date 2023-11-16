@@ -1,22 +1,23 @@
 import React from 'react';
 import { type TextProps } from 'react-native';
 import { moderateScale } from '../../../utils/layout';
-import styled, { css } from 'styled-components/native';
+import styled, { type DefaultTheme, css } from 'styled-components/native';
 
 interface Props extends TextProps {
   isLink?: boolean;
   color?: string;
-  fontSize?: number;
+  fontSize?: keyof DefaultTheme['fontSizes'];
   fontFamily?: string;
 }
 
 export const Text: React.FC<React.PropsWithChildren<Props>> = ({
   isLink = false,
+  fontSize = 'bodySmall',
   children,
   ...rest
 }) => {
   return (
-    <RawText color={isLink ? '#4C9EEB' : rest.color} {...rest}>
+    <RawText color={isLink ? '#4C9EEB' : rest.color} fontSize={fontSize} {...rest}>
       {children}
     </RawText>
   );
@@ -25,10 +26,10 @@ export const Text: React.FC<React.PropsWithChildren<Props>> = ({
 const RawText = styled.Text<Props>`
   color: ${({ color, theme }) => color ?? theme.colors.text};
 
-  ${({ fontSize }) =>
+  ${({ theme, fontSize }) =>
     fontSize &&
     css`
-      font-size: ${moderateScale(fontSize)}px;
+      font-size: ${moderateScale(theme.fontSizes[fontSize])}px;
     `}
 
   ${({ fontFamily }) =>

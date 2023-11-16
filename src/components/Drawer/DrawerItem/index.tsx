@@ -18,7 +18,7 @@ export const DrawerItem: React.FC<Props> = ({ callback, text, icon }) => {
       <Box p={[18, 25, 18, 25]} fd={'row'} align={'center'}>
         {icon ?? null}
         <Box ml={icon ? 22 : undefined}>
-          <Text fontFamily={theme.fonts.inter.regular} fontSize={18} color={theme.colors.text}>
+          <Text fontFamily={theme.fonts.inter.regular} fontSize={'titleSmall'} color={theme.colors.text}>
             {text}
           </Text>
         </Box>

@@ -24,7 +24,7 @@ export const GenericActionButton: React.FC<Props> = ({ callback, icon, count }) 
         {icon}
         {count ? (
           <View style={{ marginLeft: moderateScale(4) }}>
-            <Text fontSize={12} color={theme.colors.darkenText}>
+            <Text fontSize={'bodySmall'} color={theme.colors.darkenText}>
               {count}
             </Text>
           </View>

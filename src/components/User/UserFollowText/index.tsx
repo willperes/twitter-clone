@@ -2,17 +2,16 @@ import React from 'react';
 import { useLayout } from '../../../hooks/useLayout';
 import { Text } from '../../Layout';
 import { Box } from '../../Layout/Box';
+import { type DefaultTheme } from 'styled-components/native';
 
 interface Props {
   count: number;
-  fontSize?: number;
+  fontSize?: keyof DefaultTheme['fontSizes'];
 }
 
 const BaseText: React.FC<{
   text: string;
-  count: number;
-  fontSize?: number;
-}> = ({ text, count, fontSize = 16 }) => {
+} & Props> = ({ text, count, fontSize = 'bodyLarge' }) => {
   const { theme } = useLayout();
 
   return (

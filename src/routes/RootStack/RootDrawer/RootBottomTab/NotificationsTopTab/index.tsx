@@ -23,7 +23,7 @@ export const NotificationsTopTab: React.FC = () => {
         tabBarLabelStyle: {
           textTransform: 'none',
           fontFamily: theme.fonts.inter.semiBold,
-          fontSize: moderateScale(16),
+          fontSize: moderateScale(theme.fontSizes.bodyLarge),
         },
         tabBarActiveTintColor: theme.colors.primary,
         tabBarInactiveTintColor: theme.colors.darkenText,

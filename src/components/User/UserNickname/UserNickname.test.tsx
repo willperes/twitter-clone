@@ -53,7 +53,7 @@ describe('components/User/UserNickName', () => {
       <UserNickname
         nickname={verifiedUserInformation.nickname}
         verified={verifiedUserInformation.verified}
-        textSize={20}
+        textSize={'titleMedium'}
       />
     );
 

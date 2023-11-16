@@ -9,9 +9,15 @@ import { Separator } from '../../components/Layout/Separator';
 import { Button } from '../../components/Buttons/Button';
 import GoogleLogo from '../../assets/icons/google-logo.svg';
 import AppleLogo from '../../assets/icons/apple-logo.svg';
+import { useNavigation } from '@react-navigation/native';
 
 export const SignInScreen: React.FC = () => {
   const { theme } = useLayout();
+  const navigation = useNavigation();
+
+  function handleNavigateToSignIn(): void {
+    navigation.navigate('SignUpScreen');
+  }
 
   return (
     <SafeAreaView
@@ -27,7 +33,7 @@ export const SignInScreen: React.FC = () => {
             <FontAwesome name={'twitter'} color={theme.colors.primary} size={moderateScale(32)} />
           </Box>
           <Box mr={8}>
-            <Text fontSize={32} fontFamily={theme.fonts.inter.extraBold}>
+            <Text fontSize={'headlineLarge'} fontFamily={theme.fonts.inter.extraBold}>
               See what&apos;s happening in the world right now.
             </Text>
           </Box>
@@ -54,10 +60,10 @@ export const SignInScreen: React.FC = () => {
             </Box>
             <Separator />
           </Box>
-          <Button title={'Create account'} buttonSize={'large'} />
+          <Button title={'Create account'} buttonSize={'large'} onPress={handleNavigateToSignIn} />
 
           <Box mt={20}>
-            <Text fontSize={13} color={theme.colors.darkenText}>
+            <Text fontSize={'bodySmall'} color={theme.colors.darkenText}>
               By signing up, you agree to the <Text isLink>Terms of Service</Text> and{' '}
               <Text isLink>Privacy Policy</Text>, including <Text isLink>Cookie Use</Text>.
             </Text>

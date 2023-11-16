@@ -4,14 +4,15 @@ import { Text } from '../../Layout';
 import { useLayout } from '../../../hooks/useLayout';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { moderateScale } from '../../../utils/layout';
+import { type DefaultTheme } from 'styled-components/native';
 
 interface Props {
   nickname: string;
   verified: boolean;
-  textSize?: number;
+  textSize?: keyof DefaultTheme['fontSizes'];
 }
 
-export const UserNickname: React.FC<Props> = ({ nickname, verified, textSize = 16 }) => {
+export const UserNickname: React.FC<Props> = ({ nickname, verified, textSize = 'bodyLarge' }) => {
   const { theme } = useLayout();
 
   return (
@@ -29,7 +30,7 @@ export const UserNickname: React.FC<Props> = ({ nickname, verified, textSize = 1
           testID={'verified-badge'}
           name={'verified'}
           color={theme.colors.primary}
-          size={moderateScale(textSize * 0.875)}
+          size={moderateScale(theme.fontSizes[textSize] * 0.875)}
           style={{ marginLeft: moderateScale(2) }}
         />
       ) : null}

@@ -23,10 +23,21 @@ const fonts = {
   }),
 };
 
+const fontSizes = {
+  headlineLarge: 32,
+  headlineMedium: 28,
+  headlineSmall: 24,
+  titleLarge: 22,
+  titleMedium: 20,
+  titleSmall: 18,
+  bodyLarge: 16,
+  bodyMedium: 14,
+  bodySmall: 12,
+}
+
 const commons = {
-  fonts: {
-    ...fonts,
-  },
+  fonts,
+  fontSizes
 };
 
 const colors = {
