@@ -14,7 +14,15 @@ Purposes of this project:
 
 > **Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
-## Step 1: Start the Metro Server
+## Step 1: Configure Firebase Service files
+
+In order for the project to run successfuly, the `@react-native-firebase/app` package should be configured as described in the documentation because the google service files are not available in this repository.
+
+Android: https://rnfirebase.io/#generating-android-credentials
+
+iOS: https://rnfirebase.io/#generating-ios-credentials
+
+## Step 2: Start the Metro Server
 
 To start Metro, run the following command from the _root_ of your React Native project:
 
@@ -25,14 +33,6 @@ npm start
 # OR using Yarn
 yarn start
 ```
-
-## Step 2: Configure Firebase Service files
-
-In order for the project to run successfuly, the `@react-native-firebase/app` package should be configured as described in the documentation because the google service files are not available in this repository.
-
-Android: https://rnfirebase.io/#generating-android-credentials
-
-iOS: https://rnfirebase.io/#generating-ios-credentials
 
 ## Step 3: Start the Application
 
