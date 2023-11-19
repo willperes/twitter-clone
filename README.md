@@ -28,7 +28,7 @@ yarn start
 
 ## Step 2: Configure Firebase Service files
 
-In order for the project to run successfuly, the `@react-native-firebase/app` package should be configured as described in the documentation because the google service files are not available in the project files.
+In order for the project to run successfuly, the `@react-native-firebase/app` package should be configured as described in the documentation because the google service files are not available in this repository.
 
 Android: https://rnfirebase.io/#generating-android-credentials
 
