@@ -26,7 +26,15 @@ npm start
 yarn start
 ```
 
-## Step 2: Start the Application
+## Step 2: Configure Firebase Service files
+
+In order for the project to run successfuly, the `@react-native-firebase/app` package should be configured as described in the documentation because the google service files are not available in the project files.
+
+Android: https://rnfirebase.io/#generating-android-credentials
+
+iOS: https://rnfirebase.io/#generating-ios-credentials
+
+## Step 3: Start the Application
 
 To open the app in a virtual device you can:
 
