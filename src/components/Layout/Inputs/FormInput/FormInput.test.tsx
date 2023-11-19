@@ -27,7 +27,7 @@ describe('components/Layout/Inputs/FormInput', () => {
       <FormInput name={'test'} control={result.current.control} error={'This field is required'} />
     );
 
-    expect(getByTestId('form-input')).toHaveStyle({
+    expect(getByTestId('test-form-input')).toHaveStyle({
       borderTopColor: theme.colors.error,
       borderBottomColor: theme.colors.error,
       borderLeftColor: theme.colors.error,

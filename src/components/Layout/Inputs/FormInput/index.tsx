@@ -20,13 +20,13 @@ export const FormInput: React.FC<Props> = ({ name, control, rules, error, ...res
       render={({ field: { onChange, value } }) => (
         <>
           <S.RawFormInput
-            testID={'form-input'}
+            testID={`${name}-form-input`}
             value={value}
             onChangeText={onChange}
             hasError={!!error}
             {...rest}
           />
-          {error ? <S.ErrorText>{error}</S.ErrorText> : null}
+          {error ? <S.ErrorText testID={`${name}-form-input-error`}>{error}</S.ErrorText> : null}
         </>
       )}
     />
