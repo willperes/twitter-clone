@@ -1,4 +1,5 @@
 import { Platform } from 'react-native';
+import { FONT_SIZES } from './constants';
 
 const fonts = {
   ...Platform.select({
@@ -8,7 +9,7 @@ const fonts = {
         medium: 'Inter-Medium',
         semiBold: 'Inter-SemiBold',
         bold: 'Inter-Bold',
-        extraBold: 'Inter-ExtraBold'
+        extraBold: 'Inter-ExtraBold',
       },
     },
     default: {
@@ -17,27 +18,15 @@ const fonts = {
         medium: 'InterMedium',
         semiBold: 'InterSemiBold',
         bold: 'InterBold',
-        extraBold: 'InterExtraBold'
+        extraBold: 'InterExtraBold',
       },
     },
   }),
 };
 
-const fontSizes = {
-  headlineLarge: 32,
-  headlineMedium: 28,
-  headlineSmall: 24,
-  titleLarge: 22,
-  titleMedium: 20,
-  titleSmall: 18,
-  bodyLarge: 16,
-  bodyMedium: 14,
-  bodySmall: 12,
-}
-
 const commons = {
   fonts,
-  fontSizes
+  fontSizes: FONT_SIZES,
 };
 
 const colors = {
@@ -51,6 +40,8 @@ const colors = {
 
     text: '#141619',
     darkenText: '#687684',
+
+    error: '#ef5350',
   },
 };
 

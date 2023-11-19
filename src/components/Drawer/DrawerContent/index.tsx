@@ -27,9 +27,9 @@ export const DrawerContent: React.FC<Props> = () => {
           <UserPhoto photoURL={user.currentUser.photoURL} size={55} />
         </Box>
         <UserNickname
-          nickname={user.currentUser.nickname}
+          name={user.currentUser.name}
           verified={user.currentUser.verified}
-          textSize={19}
+          textSize={'titleSmall'}
         />
         <UserName username={user.currentUser.username} />
         <Box mt={16} mb={4}>

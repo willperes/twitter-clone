@@ -3,10 +3,11 @@ import { type TweetUserInformation } from '../../../types/data/Tweet';
 import { UserNickname } from '.';
 import { moderateScale } from '../../../utils/layout';
 import { render } from '../../../../__utils__/render';
+import { FONT_SIZES } from '../../../theme/constants';
 
 const userInformation: TweetUserInformation = {
   username: 'willperes',
-  nickname: 'Will',
+  name: 'Will',
   photoURL: 'https://github.com/willperes.png',
   verified: false,
 };
@@ -19,20 +20,20 @@ const verifiedUserInformation: TweetUserInformation = {
 jest.mock('react-native-vector-icons/MaterialIcons', () => 'MockedMaterialIcons');
 
 describe('components/User/UserNickName', () => {
-  it('should display the user nickname', async () => {
+  it('should display the user name', async () => {
     const { getByText } = render(
-      <UserNickname nickname={userInformation.nickname} verified={userInformation.verified} />
+      <UserNickname name={userInformation.name} verified={userInformation.verified} />
     );
 
     await waitFor(() => {
-      expect(getByText(userInformation.nickname)).toBeTruthy();
+      expect(getByText(userInformation.name)).toBeTruthy();
     });
   });
 
   it('should display the verified badge if the user is verified', () => {
     const { getByTestId } = render(
       <UserNickname
-        nickname={verifiedUserInformation.nickname}
+        name={verifiedUserInformation.name}
         verified={verifiedUserInformation.verified}
       />
     );
@@ -42,7 +43,7 @@ describe('components/User/UserNickName', () => {
 
   it('should not display the verified badge if the user is not verified', () => {
     const { getByTestId } = render(
-      <UserNickname nickname={userInformation.nickname} verified={userInformation.verified} />
+      <UserNickname name={userInformation.name} verified={userInformation.verified} />
     );
 
     expect(() => getByTestId('verified-badge')).toThrow();
@@ -51,16 +52,16 @@ describe('components/User/UserNickName', () => {
   it('should change the text and icon size proportionally when provided with the textSize prop', () => {
     const { getByText, getByTestId } = render(
       <UserNickname
-        nickname={verifiedUserInformation.nickname}
+        name={verifiedUserInformation.name}
         verified={verifiedUserInformation.verified}
         textSize={'titleMedium'}
       />
     );
 
-    const text = getByText(verifiedUserInformation.nickname);
+    const text = getByText(verifiedUserInformation.name);
     const icon = getByTestId('verified-badge');
 
-    expect(text).toHaveStyle({ fontSize: moderateScale(20) });
-    expect(icon).toHaveProp('size', moderateScale(20 * 0.875));
+    expect(text).toHaveStyle({ fontSize: moderateScale(FONT_SIZES.titleMedium) });
+    expect(icon).toHaveProp('size', moderateScale(FONT_SIZES.titleMedium * 0.875));
   });
 });

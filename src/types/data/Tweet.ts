@@ -13,7 +13,7 @@ export interface TweetSummary extends BaseTweet {
 
 export interface TweetUserInformation {
   username: string;
-  nickname: string;
+  name: string;
   photoURL: string;
   verified: boolean;
 }

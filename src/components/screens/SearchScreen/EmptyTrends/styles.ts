@@ -1,24 +1,24 @@
-import styled from "styled-components/native";
-import { Box } from "../../../Layout/Box";
-import { Text } from "../../../Layout";
+import styled from 'styled-components/native';
+import { Box } from '../../../Layout/Box';
+import { Text } from '../../../Layout';
 
 export const Wrapper = styled(Box).attrs({
-    p: [37, 34, 37, 34],
-    align: 'center'
+  p: [37, 34, 37, 34],
+  align: 'center',
 })`
-    background-color: ${({ theme }) => theme.colors.backgroundColor};
+  background-color: ${({ theme }) => theme.colors.backgroundColor};
 `;
 
 export const Heading = styled(Text).attrs(({ theme }) => ({
-    size: 22,
-    fontFamily: theme.fonts.inter.extraBold,
-    color: theme.colors.text,
+  fontSize: 'titleLarge',
+  fontFamily: theme.fonts.inter.extraBold,
+  color: theme.colors.text,
 }))``;
 
 export const Paragraph = styled(Text).attrs(({ theme }) => ({
-    size: 16,
-    fontFamily: theme.fonts.inter.regular,
-    color: theme.colors.darkenText,
+  fontSize: 'bodyLarge',
+  fontFamily: theme.fonts.inter.regular,
+  color: theme.colors.darkenText,
 }))`
-    text-align: center;
+  text-align: center;
 `;

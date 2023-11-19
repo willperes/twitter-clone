@@ -23,5 +23,5 @@ const Wrapper = styled(Box).attrs({
 
 const Title = styled(Text).attrs(({ theme }) => ({
   fontFamily: theme.fonts.inter.extraBold,
-  size: 19,
+  fontSize: 'titleSmall',
 }))``;

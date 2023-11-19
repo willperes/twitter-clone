@@ -1,6 +1,8 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { type PayloadAction, createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { type User } from '../../types/data/User';
 import { type RootState } from '..';
+import { type FirebaseAuthTypes } from '@react-native-firebase/auth';
+import { userService } from '../../services/userService';
 
 export interface UserState {
   currentUser: User;
@@ -9,12 +11,8 @@ export interface UserState {
 }
 
 const initialState: UserState = {
-  currentUser: {
-    username: 'willperes',
-    nickname: 'Will 🇧🇷',
-    photoURL: 'https://github.com/willperes.png',
-    verified: true,
-  },
+  // TODO: find a way to improve this.
+  currentUser: {} as User,
   followers: 924,
   following: 127,
 };
@@ -22,12 +20,38 @@ const initialState: UserState = {
 export const userSlice = createSlice({
   name: 'user',
   initialState,
-  reducers: {},
+  reducers: {
+    setCurrentUser: (state, action: PayloadAction<User | null>) => {
+      return {
+        ...state,
+        currentUser: action.payload ?? ({} as User),
+      };
+    },
+  },
 });
 
-// export const {} = userSlice.actions
+export const { setCurrentUser } = userSlice.actions;
 
-export const getUser = (state: RootState): UserState => state.user;
-export const getCurrentUser = (state: RootState): User => state.user.currentUser;
+export const getUser = (state: RootState) => state.user;
+export const getIsAuthenticated = (state: RootState) =>
+  !!Object.values(state.user.currentUser).length;
+export const getCurrentUser = (state: RootState) => state.user.currentUser;
+
+export const changeUserThunk = createAsyncThunk(
+  'user/changeUser',
+  async (user: FirebaseAuthTypes.User | null, { rejectWithValue, dispatch }) => {
+    if (!user) {
+      dispatch(userSlice.actions.setCurrentUser(null));
+      return;
+    }
+
+    try {
+      const user = await userService.getCurrentUser();
+      dispatch(userSlice.actions.setCurrentUser(user));
+    } catch (error) {
+      return rejectWithValue(error);
+    }
+  }
+);
 
 export default userSlice.reducer;

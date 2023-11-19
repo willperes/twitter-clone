@@ -1,6 +1,7 @@
 import React from 'react';
 import { Image } from 'react-native';
 import { moderateScale } from '../../../utils/layout';
+import { useLayout } from '../../../hooks/useLayout';
 
 interface Props {
   photoURL: string;
@@ -8,6 +9,8 @@ interface Props {
 }
 
 export const UserPhoto: React.FC<Props> = ({ photoURL, size }) => {
+  const { theme } = useLayout();
+
   return (
     <Image
       testID={'user-photo'}
@@ -17,6 +20,7 @@ export const UserPhoto: React.FC<Props> = ({ photoURL, size }) => {
       height={moderateScale(size)}
       width={moderateScale(size)}
       borderRadius={100}
+      style={{ backgroundColor: `${theme.colors.darkenText}40` }}
     />
   );
 };

@@ -7,12 +7,12 @@ import { moderateScale } from '../../../utils/layout';
 import { type DefaultTheme } from 'styled-components/native';
 
 interface Props {
-  nickname: string;
+  name: string;
   verified: boolean;
   textSize?: keyof DefaultTheme['fontSizes'];
 }
 
-export const UserNickname: React.FC<Props> = ({ nickname, verified, textSize = 'bodyLarge' }) => {
+export const UserNickname: React.FC<Props> = ({ name, verified, textSize = 'bodyLarge' }) => {
   const { theme } = useLayout();
 
   return (
@@ -23,7 +23,7 @@ export const UserNickname: React.FC<Props> = ({ nickname, verified, textSize = '
         ellipsizeMode={'tail'}
         numberOfLines={1}
       >
-        {nickname}
+        {name}
       </Text>
       {verified ? (
         <MaterialIcons

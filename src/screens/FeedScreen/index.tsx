@@ -9,7 +9,7 @@ const mockTweetSummary: TweetSummary = {
   id: 1,
   publishedBy: {
     username: 'willperes',
-    nickname: 'Will 🇧🇷',
+    name: 'Will 🇧🇷',
     photoURL: 'https://github.com/willperes.png',
     verified: true,
   },

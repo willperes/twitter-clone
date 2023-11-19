@@ -1,6 +1,7 @@
 import React from 'react';
 import { BaseHeader } from '../BaseHeader';
 import { UserPhoto } from '../../User/UserPhoto';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useLayout } from '../../../hooks/useLayout';
 import { moderateScale } from '../../../utils/layout';
@@ -30,11 +31,7 @@ export const FeedHeader: React.FC = () => {
         />
       }
       titleComponent={
-        <MaterialCommunityIcons
-          name={'bird'}
-          color={theme.colors.primary}
-          size={moderateScale(32)}
-        />
+        <FontAwesome name={'twitter'} color={theme.colors.primary} size={moderateScale(32)} />
       }
     />
   );

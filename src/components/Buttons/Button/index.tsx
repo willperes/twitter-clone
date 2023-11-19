@@ -9,6 +9,8 @@ interface Props extends ButtonProps {
   trailing?: React.ReactNode;
 }
 
+// TODO: when the button is disabled, change the style to show it as disabled
+// TODO: create a loading prop that shows a spinner (custom buttom?)
 export const Button: React.FC<Props> = ({ leading, trailing, title, ...rest }) => {
   return (
     <BaseButton {...rest}>

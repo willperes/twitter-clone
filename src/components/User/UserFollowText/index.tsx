@@ -9,9 +9,11 @@ interface Props {
   fontSize?: keyof DefaultTheme['fontSizes'];
 }
 
-const BaseText: React.FC<{
-  text: string;
-} & Props> = ({ text, count, fontSize = 'bodyLarge' }) => {
+const BaseText: React.FC<
+  {
+    text: string;
+  } & Props
+> = ({ text, count, fontSize = 'bodyLarge' }) => {
   const { theme } = useLayout();
 
   return (

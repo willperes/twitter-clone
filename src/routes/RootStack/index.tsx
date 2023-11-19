@@ -3,15 +3,31 @@ import React from 'react';
 import { RootDrawer } from './RootDrawer';
 import { SignInScreen } from '../../screens/SignInScreen';
 import { SignUpScreen } from '../../screens/SignUpScreen';
+import { useAuthentication } from '../../hooks/useAuthentication';
 
 const Stack = createNativeStackNavigator();
 
 export const RootStack: React.FC = () => {
+  const { isAuthenticated } = useAuthentication();
+
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName={'SignInScreen'}>
-      <Stack.Screen name={'SignInScreen'} component={SignInScreen} />
-      <Stack.Screen name={'SignUpScreen'} component={SignUpScreen} />
-      <Stack.Screen name={'RootDrawer'} component={RootDrawer} />
+      {isAuthenticated ? (
+        <Stack.Screen name={'RootDrawer'} component={RootDrawer} />
+      ) : (
+        <>
+          <Stack.Screen name={'SignInScreen'} component={SignInScreen} />
+          <Stack.Screen
+            name={'SignUpScreen'}
+            component={SignUpScreen}
+            options={{
+              headerShown: true,
+              headerTitle: 'Create your account',
+              headerBackTitleVisible: false,
+            }}
+          />
+        </>
+      )}
     </Stack.Navigator>
   );
 };
