@@ -1,7 +1,7 @@
 import { Form } from '.';
-import { act, fireEvent, render } from '../../../../__utils__/render';
+import { act, fireEvent, render } from '../../../../../__utils__/render';
 
-describe('screens/SignUpScreen/Form', () => {
+describe('screens/public/SignUpScreen/Form', () => {
   beforeEach(() => {
     jest.useFakeTimers();
   });

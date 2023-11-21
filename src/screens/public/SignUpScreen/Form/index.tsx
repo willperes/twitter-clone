@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Box, FormInput } from '../../../components/Layout';
-import { usernameValidationPattern } from '../../../utils/forms/usernameValidationPattern';
-import { emailValidationPattern } from '../../../utils/forms/emailValidationPattern';
+import { Box, FormInput } from '../../../../components/Layout';
+import { usernameValidationPattern } from '../../../../utils/forms/usernameValidationPattern';
+import { emailValidationPattern } from '../../../../utils/forms/emailValidationPattern';
 import { useForm } from 'react-hook-form';
-import { type SignUpDto } from '../../../types/data/SignUpDto';
-import { Button } from '../../../components/Buttons/Button';
+import { type SignUpDto } from '../../../../types/data/SignUpDto';
+import { Button } from '../../../../components/Buttons/Button';
 
 interface Props {
   onSubmit: (data: SignUpDto) => Promise<void>;

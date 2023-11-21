@@ -1,8 +1,8 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 import { RootDrawer } from './RootDrawer';
-import { NotAuthenticatedScreen } from '../../screens/NotAuthenticatedScreen';
-import { SignUpScreen } from '../../screens/SignUpScreen';
+import { NotAuthenticatedScreen } from '../../screens/public/NotAuthenticatedScreen';
+import { SignUpScreen } from '../../screens/public/SignUpScreen';
 import { useAuthentication } from '../../hooks/useAuthentication';
 
 const Stack = createNativeStackNavigator();

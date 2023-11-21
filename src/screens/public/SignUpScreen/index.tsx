@@ -1,8 +1,8 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native';
-import { Box } from '../../components/Layout/Box';
-import { useLayout } from '../../hooks/useLayout';
-import { useSignUp } from '../../hooks/useSignUp';
+import { Box } from '../../../components/Layout/Box';
+import { useLayout } from '../../../hooks/useLayout';
+import { useSignUp } from '../../../hooks/useSignUp';
 import { Form } from './Form';
 
 export const SignUpScreen: React.FC = () => {

@@ -1,14 +1,14 @@
 import React from 'react';
-import { Text } from '../../components/Layout';
+import { Text } from '../../../components/Layout';
 import { SafeAreaView, View } from 'react-native';
-import { Box } from '../../components/Layout/Box';
+import { Box } from '../../../components/Layout/Box';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import { useLayout } from '../../hooks/useLayout';
-import { moderateScale } from '../../utils/layout';
-import { Separator } from '../../components/Layout/Separator';
-import { Button } from '../../components/Buttons/Button';
-import GoogleLogo from '../../assets/icons/google-logo.svg';
-import AppleLogo from '../../assets/icons/apple-logo.svg';
+import { useLayout } from '../../../hooks/useLayout';
+import { moderateScale } from '../../../utils/layout';
+import { Separator } from '../../../components/Layout/Separator';
+import { Button } from '../../../components/Buttons/Button';
+import GoogleLogo from '../../../assets/icons/google-logo.svg';
+import AppleLogo from '../../../assets/icons/apple-logo.svg';
 import { useNavigation } from '@react-navigation/native';
 
 export const NotAuthenticatedScreen: React.FC = () => {
