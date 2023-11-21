@@ -11,7 +11,7 @@ import GoogleLogo from '../../assets/icons/google-logo.svg';
 import AppleLogo from '../../assets/icons/apple-logo.svg';
 import { useNavigation } from '@react-navigation/native';
 
-export const SignInScreen: React.FC = () => {
+export const NotAuthenticatedScreen: React.FC = () => {
   const { theme } = useLayout();
   const navigation = useNavigation();
 
