@@ -9,7 +9,7 @@ import { Separator } from '../../../components/Layout/Separator';
 import { Button } from '../../../components/Buttons/Button';
 import GoogleLogo from '../../../assets/icons/google-logo.svg';
 import AppleLogo from '../../../assets/icons/apple-logo.svg';
-import { useNavigation } from '@react-navigation/native';
+import { Link, useNavigation } from '@react-navigation/native';
 
 export const NotAuthenticatedScreen: React.FC = () => {
   const { theme } = useLayout();
@@ -64,14 +64,19 @@ export const NotAuthenticatedScreen: React.FC = () => {
 
           <Box mt={20}>
             <Text fontSize={'bodySmall'} color={theme.colors.darkenText}>
-              By signing up, you agree to the <Text isLink>Terms of Service</Text> and{' '}
-              <Text isLink>Privacy Policy</Text>, including <Text isLink>Cookie Use</Text>.
+              By signing up, you agree to the{' '}
+              <Text style={{ color: theme.colors.link }}>Terms of Service</Text> and{' '}
+              <Text style={{ color: theme.colors.link }}>Privacy Policy</Text>, including{' '}
+              <Text style={{ color: theme.colors.link }}>Cookie Use</Text>.
             </Text>
           </Box>
 
           <Box mt={40} mb={80}>
             <Text color={theme.colors.darkenText}>
-              Have an account already? <Text isLink>Log in</Text>
+              Have an account already?{' '}
+              <Link to={'/SignInScreen'} style={{ color: theme.colors.link }}>
+                Log in
+              </Link>
             </Text>
           </Box>
         </Box>

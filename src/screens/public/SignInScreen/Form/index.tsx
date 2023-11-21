@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { Box, FormInput } from '../../../../components/Layout';
 import { usernameValidationPattern } from '../../../../utils/forms/usernameValidationPattern';
-import { emailValidationPattern } from '../../../../utils/forms/emailValidationPattern';
 import { useForm } from 'react-hook-form';
-import { type SignUpDto } from '../../../../types/data/authentication/SignUpDto';
 import { Button } from '../../../../components/Buttons/Button';
+import { type SignInDto } from '../../../../types/data/authentication/SignInDto';
 
 interface Props {
-  onSubmit: (data: SignUpDto) => Promise<void>;
+  onSubmit: (data: SignInDto) => Promise<void>;
 }
 
 export const Form: React.FC<Props> = ({ onSubmit }) => {
@@ -17,11 +16,11 @@ export const Form: React.FC<Props> = ({ onSubmit }) => {
     handleSubmit,
     control,
     formState: { errors },
-  } = useForm<SignUpDto>({
+  } = useForm<SignInDto>({
     mode: 'onChange',
   });
 
-  async function onSubmitForm(data: SignUpDto): Promise<void> {
+  async function onSubmitForm(data: SignInDto): Promise<void> {
     setIsSubmitting(true);
     await onSubmit(data);
     setIsSubmitting(false);
@@ -31,22 +30,6 @@ export const Form: React.FC<Props> = ({ onSubmit }) => {
     <Box justify={'space-between'} style={{ flex: 1 }}>
       <Box>
         <Box>
-          <FormInput
-            name={'name'}
-            control={control}
-            rules={{
-              required: {
-                value: true,
-                message: 'This field is required',
-              },
-              minLength: { value: 8, message: 'Minimum length of 8 characters' },
-            }}
-            error={errors.name?.message}
-            placeholder={'Name'}
-          />
-        </Box>
-
-        <Box mt={22}>
           <FormInput
             name={'username'}
             control={control}
@@ -60,24 +43,6 @@ export const Form: React.FC<Props> = ({ onSubmit }) => {
             }}
             error={errors.username?.message}
             placeholder={'Username'}
-            autoCapitalize={'none'}
-          />
-        </Box>
-
-        <Box mt={22}>
-          <FormInput
-            name={'email'}
-            control={control}
-            rules={{
-              required: {
-                value: true,
-                message: 'This field is required',
-              },
-              pattern: emailValidationPattern,
-            }}
-            error={errors.email?.message}
-            placeholder={'E-mail'}
-            keyboardType={'email-address'}
             autoCapitalize={'none'}
           />
         </Box>
@@ -103,7 +68,7 @@ export const Form: React.FC<Props> = ({ onSubmit }) => {
 
       <Box>
         <Button
-          testID={'sign-up-submit-button'}
+          testID={'sign-in-submit-button'}
           disabled={isSubmitting}
           title={'Submit'}
           buttonSize={'large'}

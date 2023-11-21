@@ -1,16 +1,15 @@
-import React from 'react';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Form } from './Form';
 import * as S from './styles';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useAuthentication } from '../../../hooks/useAuthentication';
 
-export const SignUpScreen: React.FC = () => {
+export const SignInScreen = () => {
   const { bottom } = useSafeAreaInsets();
-  const { handleSubmitSignUp } = useAuthentication();
+  const { handleSubmitSignIn } = useAuthentication();
 
   return (
     <S.Container style={{ paddingBottom: bottom }}>
-      <Form onSubmit={handleSubmitSignUp} />
+      <Form onSubmit={handleSubmitSignIn} />
     </S.Container>
   );
 };

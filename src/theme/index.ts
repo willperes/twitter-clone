@@ -42,6 +42,7 @@ const colors = {
     darkenText: '#687684',
 
     error: '#ef5350',
+    link: '#4C9EEB',
   },
 };
 

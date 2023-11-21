@@ -4,20 +4,18 @@ import { moderateScale } from '../../../utils/layout';
 import styled, { type DefaultTheme, css } from 'styled-components/native';
 
 interface Props extends TextProps {
-  isLink?: boolean;
   color?: string;
   fontSize?: keyof DefaultTheme['fontSizes'];
   fontFamily?: string;
 }
 
 export const Text: React.FC<React.PropsWithChildren<Props>> = ({
-  isLink = false,
   fontSize = 'bodySmall',
   children,
   ...rest
 }) => {
   return (
-    <RawText color={isLink ? '#4C9EEB' : rest.color} fontSize={fontSize} {...rest}>
+    <RawText fontSize={fontSize} {...rest}>
       {children}
     </RawText>
   );

@@ -4,6 +4,7 @@ import { RootDrawer } from './RootDrawer';
 import { NotAuthenticatedScreen } from '../../screens/public/NotAuthenticatedScreen';
 import { SignUpScreen } from '../../screens/public/SignUpScreen';
 import { useAuthentication } from '../../hooks/useAuthentication';
+import { SignInScreen } from '../../screens/public/SignInScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -20,15 +21,27 @@ export const RootStack: React.FC = () => {
       ) : (
         <>
           <Stack.Screen name={'NotAuthenticatedScreen'} component={NotAuthenticatedScreen} />
-          <Stack.Screen
-            name={'SignUpScreen'}
-            component={SignUpScreen}
-            options={{
+          <Stack.Group
+            screenOptions={{
               headerShown: true,
-              headerTitle: 'Create your account',
               headerBackTitleVisible: false,
             }}
-          />
+          >
+            <Stack.Screen
+              name={'SignUpScreen'}
+              component={SignUpScreen}
+              options={{
+                headerTitle: 'Create your account',
+              }}
+            />
+            <Stack.Screen
+              name={'SignInScreen'}
+              component={SignInScreen}
+              options={{
+                headerTitle: 'Sign In',
+              }}
+            />
+          </Stack.Group>
         </>
       )}
     </Stack.Navigator>
