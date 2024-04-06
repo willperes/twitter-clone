@@ -1,5 +1,3 @@
-# 🚧 In progress 🚧
-
 This is a project being developed entirely for learning purposes following a [Figma UI project](https://www.figma.com/community/file/874600772514053297).
 
 Purposes of this project:
@@ -9,6 +7,8 @@ Purposes of this project:
 - Improving my knowledge of some key React Native libraries such as: **@react-navigation/native**.
 
 ... and more.
+
+https://github.com/willperes/twitter-clone/assets/64440935/451469d6-bd17-4238-af90-75205b47b856
 
 # Getting Started
 
